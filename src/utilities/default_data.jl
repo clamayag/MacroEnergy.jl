@@ -76,6 +76,7 @@ function storage_default_data()
         :long_duration => false,
         :can_expand => true,
         :can_retire => true,
+        :has_capacity => true,
         :capacity_size => 1.0,
         :existing_capacity => 0.0,
         :min_capacity => 0.0,

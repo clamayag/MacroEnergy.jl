@@ -54,8 +54,8 @@ function add_model_constraint!(ct::LongDurationStorageImplicitMinMaxConstraint, 
     N = setdiff(modeled_subperiods(g),W)
 
     if !isempty(N)
-        charge_edge = g.charge_edge;
-        discharge_edge = g.discharge_edge;
+        #charge_edge = g.charge_edge;
+        #discharge_edge = g.discharge_edge;
 
         max_storage_level =  @variable(model, [w ∈ W], lower_bound = 0.0, base_name = "vSTORMAX_$(id(g))_period$(period_index(g))")
         min_storage_level = @variable(model, [w ∈ W], lower_bound = 0.0, base_name = "vSTORMIN_$(id(g))_period$(period_index(g))")
@@ -65,11 +65,18 @@ function add_model_constraint!(ct::LongDurationStorageImplicitMinMaxConstraint, 
 
         tstart = Dict(n => first(get_subperiod(g,subperiod_map(g,n))) for n in N)
 
-        stor_balance_expr = @expression(model, [n in N], 
-            (1 - loss_fraction(g,tstart[n]))*storage_initial(g, n) 
-            + balance_data(charge_edge, g, :storage)*flow(charge_edge,tstart[n])
-            - balance_data(discharge_edge, g, :storage)*flow(discharge_edge,tstart[n])
+        #stor_balance_expr = @expression(model, [n in N], 
+        #    (1 - loss_fraction(g,tstart[n]))*storage_initial(g, n) 
+        #    + balance_data(charge_edge, g, :storage)*flow(charge_edge,tstart[n])
+        #    - balance_data(discharge_edge, g, :storage)*flow(discharge_edge,tstart[n])
+        #)
+        bal = get_balance(g, :storage)  # Vector of expressions indexed by t in time_interval(g)
+
+        stor_balance_expr = @expression(model, [n in N],
+            (1 - loss_fraction(g, tstart[n])) * storage_initial(g, n) +
+            bal[tstart[n]]
         )
+        
         @constraint(model, [n in N], 
             stor_balance_expr[n] + max_storage_level[subperiod_map(g,n)] - storage_level(g,tstart[n]) ≤ capacity(g)
         )

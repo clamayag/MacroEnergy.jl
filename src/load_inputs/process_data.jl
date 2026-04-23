@@ -84,6 +84,10 @@ function check_and_convert_constraints!(data::AbstractDict{Symbol,Any})
     constraints = Vector{AbstractTypeConstraint}()
     for (name, flag) in data[:constraints]
         if flag == true
+            if name == :HydroGenConstraint
+                # skip since we push manually
+                continue
+            end
             push!(constraints, contraint_library[name]()) # Note: This is a constructor call, not a type (e.g., BalanceConstraint())
         end
     end

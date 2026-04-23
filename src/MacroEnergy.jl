@@ -12,6 +12,7 @@ using InteractiveUtils
 using Printf: @printf
 using MacroEnergyScaling
 using MacroEnergySolvers
+using MacroEnergyTimeReduction
 using Pkg
 using DistributedArrays
 using Distributed
@@ -20,6 +21,7 @@ using GitHub
 using Markdown
 using Logging
 using LoggingExtras
+using StatsBase
 
 import MacroEnergyScaling: scale_constraints!
 import JuMP: set_optimizer, set_optimizer_attributes
@@ -53,6 +55,7 @@ abstract type Methanol <: Commodity end ## MWh
 abstract type Nitrogen <: Commodity end ## tonnes
 abstract type Heat <: Commodity end ## MWh
 abstract type Steam <: Commodity end ## MWh
+abstract type Water <: Commodity end ## m3
 
 ## Time data types
 abstract type AbstractTimeData{T<:Commodity} end
@@ -140,6 +143,7 @@ end
 
 include_all_in_folder("model/types/")
 
+include_all_in_folder("time_domain_reduction")
 include("utilities/file_io/json.jl")
 include("utilities/file_io/csv.jl")
 include("utilities/file_io/duckdb.jl")
@@ -155,6 +159,7 @@ include("utilities/model_templates.jl")
 include("utilities/run_tools.jl")
 include("utilities/user_additions.jl")
 include("utilities/utilities.jl")
+include("utilities/debug_infeasibility.jl")
 include_all_in_folder("utilities/model_converters")
 
 include("model/units.jl")
@@ -224,6 +229,7 @@ include("model/assets/thermalheating.jl")
 include("model/assets/electricheating.jl")
 include("model/assets/thermalsteam.jl")
 include("model/assets/electricsteam.jl")
+include("model/assets/hydro_streamflow.jl")
 
 include("config/configure_settings.jl")
 include("config/case_settings.jl")
@@ -296,7 +302,9 @@ export AbstractAsset,
     Graphite,
     Heat,
     HydroRes,
+    HydroStreamflow,
     Hydrogen,
+    HydroGenConstraint,
     IronOre,
     LongDurationStorage,
     LongDurationStorageImplicitMinMaxConstraint,
@@ -314,6 +322,7 @@ export AbstractAsset,
     MinCapacityConstraint,
     MinDownTimeConstraint,
     MinFlowConstraint,
+    MinHydroFlowConstraint,
     MinStorageOutflowConstraint,
     MinStorageLevelConstraint,
     MinInitStorageLevelConstraint,
@@ -333,6 +342,7 @@ export AbstractAsset,
     Steam,
     SteelScrap,
     Storage,
+    SpillConstraint,
     StorageCapacityConstraint,
     StorageChargeDischargeRatioConstraint,
     StorageMaxDurationConstraint,
@@ -351,18 +361,19 @@ export AbstractAsset,
     Transformation,
     Uranium,
     VRE,
+    Water,
     write_capacity,
     write_costs,
     write_dataframe,
     write_detailed_costs,
     write_detailed_costs_benders,
     write_duals,
+    write_time_weights,
     write_flow,
     write_non_served_demand,
     write_outputs,
     write_storage_level,
     write_curtailment,
-    write_full_timeseries,
     write_time_weights,
     template_system,
     template_node,

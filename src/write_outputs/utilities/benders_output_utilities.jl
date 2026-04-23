@@ -288,6 +288,42 @@ function extract_subproblem_results(system::System; scaling::Float64=1.0)
 end
 
 """
+Collect storage level results from subproblems.
+"""
+function collect_storage_level_results(case::Case, bd_results::BendersResults)
+    if case.settings.BendersSettings[:Distributed]
+        return collect_distributed_storage_levels(bd_results)
+    else
+        return collect_local_storage_levels(bd_results)
+    end
+end
+
+"""
+Collect storage level results from subproblems on distributed workers.
+"""
+function collect_distributed_storage_levels(bd_results::BendersResults)
+    p_id = workers()
+    np_id = length(p_id)
+    storage_df = Vector{Vector{DataFrame}}(undef, np_id)
+    @sync for i in 1:np_id
+        @async storage_df[i] = @fetchfrom p_id[i] get_local_expressions(get_optimal_storage_level, DistributedArrays.localpart(bd_results.op_subproblem))
+    end
+    return reduce(vcat, storage_df)
+end
+
+"""
+Collect storage level results from local subproblems.
+"""
+function collect_local_storage_levels(bd_results::BendersResults)
+    storage_df = Vector{DataFrame}(undef, length(bd_results.op_subproblem))
+    for i in eachindex(bd_results.op_subproblem)
+        system = bd_results.op_subproblem[i][:system_local]
+        storage_df[i] = get_optimal_storage_level(system)
+    end
+    return storage_df
+end
+
+"""
 Convert DenseAxisArray to Dict, preserving axis information.
 """
 function densearray_to_dict(arr::JuMP.Containers.DenseAxisArray)

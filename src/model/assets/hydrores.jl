@@ -1,9 +1,10 @@
-struct HydroRes <: AbstractAsset
+ struct HydroRes <: AbstractAsset
     id::AssetId
     hydrostor::AbstractStorage{<:Electricity}
     discharge_edge::Edge{<:Electricity}
     inflow_edge::Edge{<:Electricity}
     spill_edge::Edge{<:Electricity}
+    slack_edge::Union{Missing,Edge{<:Electricity}}
 end
 
 function default_data(t::Type{HydroRes}, id=missing, style="full")
@@ -47,6 +48,9 @@ function full_default_data(::Type{HydroRes}, id=missing)
             :spill_edge => @edge_data(
                 :commodity => "Electricity",
             ),
+            :slack_edge => @edge_data(
+                :commodity => "Electricity",
+            ),
         ),
     )
 end
@@ -72,9 +76,10 @@ function simple_default_data(::Type{HydroRes}, id=missing)
         :discharge_variable_om_cost => 0.0,
         :inflow_investment_cost => 0.0,
         :inflow_fixed_om_cost => 0.0,
-        :inflow_variable_om_comst => 0.0,
+        :inflow_variable_om_cost => 0.0,
         :discharge_efficiency => 1.0,
         :inflow_efficiency => 1.0,
+        :slack_variable_om_cost => 0.0,
     )
 end
 
@@ -166,10 +171,6 @@ function make(asset_type::Type{HydroRes}, data::AbstractDict{Symbol,Any}, system
         inflow_start_node,
         inflow_end_node,
     )
-    inflow_edge.can_retire = discharge_edge.can_retire;
-    inflow_edge.can_expand = discharge_edge.can_expand;
-    inflow_edge.existing_capacity = discharge_edge.existing_capacity;
-    inflow_edge.capacity_size = discharge_edge.capacity_size;
 
     spill_edge_key = :spill_edge
     @process_data(
@@ -201,6 +202,52 @@ function make(asset_type::Type{HydroRes}, data::AbstractDict{Symbol,Any}, system
     hydrostor.charge_edge = inflow_edge
     hydrostor.spillage_edge = spill_edge
 
+    slack_edge_key = :slack_edge
+    @process_data(
+        slack_edge_data,
+        data[:edges][slack_edge_key],
+        [
+           (data[:edges][slack_edge_key], key),
+            (data[:edges][slack_edge_key], Symbol("slack_", key)),
+            (data, Symbol("slack_", key)),
+       ]
+    )
+
+    @start_vertex(
+        slack_start_node,
+       slack_edge_data,
+       Electricity,
+       [(slack_edge_data, :start_vertex), (data, :hydro_source), (data, :location)],
+    )
+
+    @end_vertex(
+        slack_end_node,
+       slack_edge_data,
+       Electricity,
+        [(slack_edge_data, :end_vertex), (data, :location)],
+    )
+
+    slack_edge = Edge(
+        Symbol(id, "_", slack_edge_key),
+        slack_edge_data,
+        system.time_data[:Electricity],
+        Electricity,
+       slack_start_node,
+        slack_end_node,
+    )
+
+    charge_discharge_ratio = get_from([
+            (storage_data, :charge_discharge_ratio),
+            (storage_data, :charge_to_discharge_ratio)
+        ], 1.0)
+
+    if get_from([(inflow_edge_data, :has_capacity)], false) == true
+        inflow_edge.can_retire = discharge_edge.can_retire;
+        inflow_edge.can_expand = discharge_edge.can_expand;
+        inflow_edge.existing_capacity = charge_discharge_ratio * discharge_edge.existing_capacity;
+        inflow_edge.capacity_size = charge_discharge_ratio * discharge_edge.capacity_size;
+    end
+
     discharge_efficiency = get_from([
             (discharge_edge_data, :discharge_efficiency),
             (discharge_edge_data, :efficiency)
@@ -217,6 +264,7 @@ function make(asset_type::Type{HydroRes}, data::AbstractDict{Symbol,Any}, system
             spill_edge.id => 1.0
         )
     )
-
-    return HydroRes(id,hydrostor,discharge_edge,inflow_edge,spill_edge)
+    
+    push!(spill_edge.constraints,MinHydroFlowConstraint(discharge_edge=discharge_edge, slack_edge=slack_edge))
+    return HydroRes(id,hydrostor,discharge_edge,inflow_edge,spill_edge,slack_edge)
 end

@@ -32,7 +32,11 @@ function generate_case(
     start_time = time()
     systems::Vector{System} = map(1:num_systems) do system_idx
         system_data = case[system_idx]
+        # ensure period index is passed into time data regardless of TDR usage
         system_data[:time_data][:SystemIndex] = system_idx
+        if haskey(system_data, :TDR_time_data)
+            system_data[:TDR_time_data][:SystemIndex] = system_idx
+        end
         system = empty_system(dirname(path))
         generate_system!(system, system_data)
         return system

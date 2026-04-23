@@ -109,7 +109,7 @@ end
 
 function get_available_capacity(periods::Vector{System})
     
-    AvailableCapacity = Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr}}();
+    AvailableCapacity = Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr,Float64}}();
 
     for system in periods
         AvailableCapacity = get_available_capacity!(system,AvailableCapacity)
@@ -118,7 +118,7 @@ function get_available_capacity(periods::Vector{System})
     return AvailableCapacity
 end
 
-function get_available_capacity!(system::System, AvailableCapacity::Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr}})
+function get_available_capacity!(system::System, AvailableCapacity::Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr,Float64}})
     
     for a in system.assets
         get_available_capacity!(a, AvailableCapacity)
@@ -127,7 +127,7 @@ function get_available_capacity!(system::System, AvailableCapacity::Dict{Tuple{S
     return AvailableCapacity
 end
 
-function get_available_capacity!(a::AbstractAsset, AvailableCapacity::Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr}})
+function get_available_capacity!(a::AbstractAsset, AvailableCapacity::Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr,Float64}})
 
     for t in fieldnames(typeof(a))
         get_available_capacity!(getfield(a, t), AvailableCapacity)
@@ -135,27 +135,27 @@ function get_available_capacity!(a::AbstractAsset, AvailableCapacity::Dict{Tuple
 
 end
 
-function get_available_capacity!(n::Node, AvailableCapacity::Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr}})
+function get_available_capacity!(n::Node, AvailableCapacity::Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr,Float64}})
 
     return nothing
 
 end
 
 
-function get_available_capacity!(g::Transformation, AvailableCapacity::Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr}})
+function get_available_capacity!(g::Transformation, AvailableCapacity::Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr,Float64}})
 
     return nothing
 
 end
 
-function get_available_capacity!(g::AbstractStorage, AvailableCapacity::Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr}})
+function get_available_capacity!(g::AbstractStorage, AvailableCapacity::Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr,Float64}})
 
     AvailableCapacity[g.id,period_index(g)] = g.capacity;
 
 end
 
 
-function get_available_capacity!(e::AbstractEdge, AvailableCapacity::Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr}})
+function get_available_capacity!(e::AbstractEdge, AvailableCapacity::Dict{Tuple{Symbol,Int64}, Union{JuMPVariable,AffExpr,Float64}})
 
     AvailableCapacity[e.id,period_index(e)] = e.capacity;
 

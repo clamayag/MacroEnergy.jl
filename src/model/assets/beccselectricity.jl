@@ -35,9 +35,6 @@ function full_default_data(::Type{BECCSElectricity}, id=missing,)
                 :has_capacity => true,
                 :can_expand => true,
                 :can_retire => true,
-                :constraints => Dict{Symbol,Bool}(
-                    :CapacityConstraint => true,
-                )
             ),
             :co2_edge => @edge_data(
                 :commodity => "CO2",
@@ -49,6 +46,13 @@ function full_default_data(::Type{BECCSElectricity}, id=missing,)
             ),
             :elec_edge => @edge_data(
                 :commodity => "Electricity",
+                :has_capacity => true,
+                :can_expand => true,
+                :can_retire => true,
+                :constraints => Dict{Symbol,Bool}(
+                    :CapacityConstraint => true,
+                    :MaxCapacityConstraint => true,
+                ),
             ),
             :co2_captured_edge => @edge_data(
                 :commodity => "CO2Captured",
@@ -64,6 +68,7 @@ function simple_default_data(::Type{BECCSElectricity}, id=missing,)
         :can_expand => true,
         :can_retire => true,
         :existing_capacity => 0.0,
+        :max_capacity => 0.0,
         :capacity_size => 1.0,
         :co2_sink => missing,
         :electricity_production => 0.0,

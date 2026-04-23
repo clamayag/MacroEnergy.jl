@@ -19,13 +19,14 @@ function full_default_data(::Type{VRE}, id=missing)
             :timedata => "Electricity",
         ),
         :edges => Dict{Symbol, Any}(
-            :edge => @edge_data(
+            :elec_edge => @edge_data(
                 :commodity => "Electricity",
                 :has_capacity => true,
                 :can_expand => true,
-                :can_return => true,
+                :can_retire => true,
                 :constraints => Dict{Symbol,Bool}(
                     :CapacityConstraint => true,
+                    :MaxCapacityConstraint => true,
                 )
             ),
         ),
@@ -93,7 +94,7 @@ function make(asset_type::Type{<:VRE}, data::AbstractDict{Symbol,Any}, system::S
         location = location,
     )
 
-    elec_edge_key = :edge
+    elec_edge_key = :elec_edge
     @process_data(
         elec_edge_data,
         data[:edges][elec_edge_key],

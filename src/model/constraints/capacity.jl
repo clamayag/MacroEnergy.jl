@@ -19,11 +19,19 @@ for each time `t` in `time_interval(e)` for the edge `e` and each `i` in `{0, 1}
 """
 function add_model_constraint!(ct::CapacityConstraint, e::UnidirectionalEdge, model::Model)
     if has_capacity(e) 
-        ct.constraint_ref = @constraint(
-            model,
-            [t in time_interval(e)],
-            flow(e, t) <= availability(e, t) * capacity(e)
-        )
+        if !isnothing(e.fd) && !isnothing(e.pd) && !isnothing(e.consumption)
+            ct.constraint_ref = @constraint(
+                model,
+                [t in time_interval(e)],
+                flow(e, t) <= availability(e, t) * capacity(e) * (1 - fd(e) - pd(e) - consumption(e))
+            )
+        else
+            ct.constraint_ref = @constraint(
+                model,
+                [t in time_interval(e)],
+                flow(e, t) <= availability(e, t) * capacity(e)
+            )
+        end
     else
        @warn "Trying to add CapacityConstraint to edge $(e.id) which has has_capacity=false. No constraint added."
     end

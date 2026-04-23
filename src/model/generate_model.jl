@@ -33,12 +33,15 @@ function generate_model(case::Case,opt::Optimizer)
         model[:eInvestmentFixedCost] = AffExpr(0.0)
         model[:eOMFixedCost] = AffExpr(0.0)
         model[:eVariableCost] = AffExpr(0.0)
-
+        
         @info(" -- Adding linking variables")
         add_linking_variables!(system, model) 
 
         @info(" -- Defining available capacity")
         define_available_capacity!(system, model)
+
+        #@info(" -- Connecting hydro cascades")
+        #connect_hydro_cascades!(system)
 
         @info(" -- Generating planning model")
         planning_model!(system, model)

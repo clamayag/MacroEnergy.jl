@@ -6,6 +6,7 @@ macro AbstractStorageBaseAttributes()
         spillage_edge::Union{Nothing, AbstractEdge} = nothing
         can_expand::Bool = $storage_defaults[:can_expand]
         can_retire::Bool = $storage_defaults[:can_retire]
+        has_capacity::Bool = $storage_defaults[:has_capacity]
         capacity::Union{JuMPVariable,AffExpr,Float64} = AffExpr(0.0)
         capacity_size::Float64 = $storage_defaults[:capacity_size]
         capital_recovery_period::Int64 = $storage_defaults[:capital_recovery_period]
@@ -26,6 +27,7 @@ macro AbstractStorageBaseAttributes()
         min_retired_capacity::Float64 = $storage_defaults[:min_retired_capacity]
         min_retired_capacity_track::Float64 = 0.0
         min_storage_level::Float64 = $storage_defaults[:min_storage_level]
+        initial_storage_level::Float64 = 0.0
         new_capacity::Union{AffExpr,Float64} = AffExpr(0.0)
         new_capacity_track::Dict{Int64,AffExpr} = Dict(1=>AffExpr(0.0))
         new_units::Union{Missing, JuMPVariable} = missing
@@ -130,6 +132,11 @@ function make_storage(
     if haskey(filtered_data,:loss_fraction) && !isa(filtered_data[:loss_fraction], Vector{Float64})
         filtered_data[:loss_fraction] = [filtered_data[:loss_fraction]];
     end 
+    for (k, v) in filtered_data
+        if v isa Int
+            filtered_data[k] = Float64(v)
+        end
+    end
     _storage = Storage{commodity}(;
         id = id,
         timedata = time_data,
@@ -178,6 +185,7 @@ min_outflow_fraction(g::AbstractStorage) = g.min_outflow_fraction;
 min_retired_capacity(g::AbstractStorage) = g.can_retire ? g.min_retired_capacity : 0.0;
 min_retired_capacity_track(g::AbstractStorage) = g.min_retired_capacity_track;
 min_storage_level(g::AbstractStorage) = g.min_storage_level;
+initial_storage_level(g::AbstractStorage) = g.initial_storage_level
 new_capacity(g::AbstractStorage) = g.new_capacity;
 new_capacity_track(g::AbstractStorage) = g.new_capacity_track;
 #### Note that storage "g" may not be present in the inputs for all case
@@ -193,6 +201,9 @@ retrofitted_capacity_track(g::AbstractStorage,s::Int64) = 0.0; ### Note that ret
 spillage_edge(g::AbstractStorage) = g.spillage_edge;
 storage_level(g::AbstractStorage) = g.storage_level;
 storage_level(g::AbstractStorage, t::Int64) = storage_level(g)[t];
+#spill_vol(g::AbstractStorage) = g.spill_vol;
+#spill_vol(g::AbstractStorage, t::Int64) = spill_vol(g)[t];
+spill_thresh(g::AbstractStorage) = g.spill_thresh;
 wacc(g::AbstractStorage) = g.wacc;
 annualized_investment_cost(g::AbstractStorage) = g.annualized_investment_cost;
 pv_period_investment_cost(g::AbstractStorage) = g.pv_period_investment_cost;
@@ -202,6 +213,7 @@ cf_period_fixed_om_cost(g::AbstractStorage) = g.cf_period_fixed_om_cost;
 variable_om_cost(g::AbstractStorage) = g.variable_om_cost;
 pv_period_variable_om_cost(g::AbstractStorage) = g.pv_period_variable_om_cost;
 cf_period_variable_om_cost(g::AbstractStorage) = g.cf_period_variable_om_cost;
+long_duration(g::AbstractStorage) = g.long_duration
 
 function add_linking_variables!(g::Storage, model::Model)
     if has_capacity(g)
@@ -258,6 +270,17 @@ function operation_model!(g::Storage, model::Model)
         base_name = "vSTOR_$(g.id)_period$(period_index(g))"
     )
 
+    #g.spill_vol = @variable(
+    #    model,
+    #    [t in time_interval(g)],
+    #    lower_bound = 0.0,
+    #    base_name = "vSPILLVOL_$(g.id)_period$(period_index(g))"
+    #)
+
+    #@constraint(model, [t in time_interval(g)], spill_vol(g,t) >= storage_level(g,t) - spill_thresh(g))
+
+    #@constraint(model, storage_level(g, first(time_interval(g))) == initial_storage_level(g))
+
     if :storage ∈ balance_ids(g)
 
         for i in balance_ids(g)
@@ -311,12 +334,18 @@ function make_long_duration_storage(
     if haskey(filtered_data,:loss_fraction) && !isa(filtered_data[:loss_fraction], Vector{Float64})
         filtered_data[:loss_fraction] = [filtered_data[:loss_fraction]];
     end 
+    for (k, v) in filtered_data
+        if v isa Int
+            filtered_data[k] = Float64(v)
+        end
+    end
     _storage = LongDurationStorage{commodity}(;
         id=id,
         timedata=time_data,
         location = location,
         filtered_data...
     )
+    #@info "CREATED LDS" id=id init=_storage.initial_storage_level obj=objectid(_storage)
     return _storage
 end
 LongDurationStorage(id::Symbol, data::Dict{Symbol,Any}, time_data::TimeData, commodity::DataType, location::Union{Missing,Symbol} = missing) =
@@ -356,6 +385,9 @@ function planning_model!(g::LongDurationStorage, model::Model)
         storage_initial(g, r) <= capacity(g)
     )
 
+    @info "ADDING INIT CONSTRAINT" id=g.id period=period_index(g) init=initial_storage_level(g) obj=objectid(g)
+    @constraint(model, storage_initial(g, first(MODELED_SUBPERIODS)) == initial_storage_level(g)*capacity(g))
+
     @constraint(model, [r in MODELED_SUBPERIODS], 
         storage_initial(g, mod1(r + 1, NPeriods)) == storage_initial(g, r) + storage_change(g, subperiod_map(g,r))
     )
@@ -372,6 +404,14 @@ function operation_model!(g::LongDurationStorage, model::Model)
         base_name = "vSTOR_$(g.id)_period$(period_index(g))"
     )
 
+    #g.spill_vol = @variable(
+    #    model,
+    #    [t in time_interval(g)],
+    #    lower_bound = 0.0,
+    #    base_name = "vSPILLVOL_$(g.id)_period$(period_index(g))"
+    #)
+
+    #@constraint(model, [t in time_interval(g)], spill_vol(g,t) >= storage_level(g,t) - spill_thresh(g))
     
     if :storage ∈ balance_ids(g)
 

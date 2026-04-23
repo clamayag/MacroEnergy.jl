@@ -7,6 +7,8 @@ macro AbstractEdgeBaseAttributes()
         start_vertex::AbstractVertex
         end_vertex::AbstractVertex
         availability::Vector{Float64} = Float64[]
+        natural_inflow::Union{Nothing,Vector{Float64}} = nothing
+        evap::Union{Nothing,Vector{Float64}} = nothing
         can_expand::Bool = $edge_defaults[:can_expand]
         can_retire::Bool = $edge_defaults[:can_retire]
         can_retrofit::Bool = $edge_defaults[:can_retrofit]
@@ -30,9 +32,14 @@ macro AbstractEdgeBaseAttributes()
         min_retired_capacity::Float64 = $edge_defaults[:min_retired_capacity]
         min_retired_capacity_track::Float64 = 0.0
         min_flow_fraction::Float64 = $edge_defaults[:min_flow_fraction]
+        min_flow::Union{Nothing, Float64} = nothing
         new_capacity::Union{AffExpr,Float64} = AffExpr(0.0)
         new_capacity_track::Dict{Int64,AffExpr} = Dict(1 => AffExpr(0.0))
         new_units::Union{JuMPVariable,Float64} = 0.0
+        travel_time::Int64 = 0
+        fd::Float64 = 0
+        pd::Float64 = 0
+        consumption::Float64 = 0
         ramp_down_fraction::Float64 = $edge_defaults[:ramp_down_fraction]
         ramp_up_fraction::Float64 = $edge_defaults[:ramp_up_fraction]
         retired_capacity::Union{AffExpr,Float64} = AffExpr(0.0)
@@ -202,12 +209,15 @@ function make_edge_unidir(
     end
     if haskey(filtered_data,:loss_fraction) && !isa(filtered_data[:loss_fraction], Vector{Float64})
         filtered_data[:loss_fraction] = [filtered_data[:loss_fraction]];
+    end    
+    for (k, v) in filtered_data
+        if k == :travel_time
+            filtered_data[k] = Int(round(v))  # or Int(v) if you require it already integer
+        elseif v isa Int
+            filtered_data[k] = Float64(v)
+        end
     end
-    unidirectional = get(data, :unidirectional, true)
-    if !unidirectional
-        error("Edge $id is being created as a unidirectional edge, but the input data has unidirectional=false. If you intended to create a bidirectional edge, set unidirectional=false and use the BidirectionalEdge constructor.")
-    end
-    _edge = UnidirectionalEdge{commodity}(;
+    _edge = Edge{commodity}(;
         id = id,
         timedata = time_data,
         start_vertex = start_vertex,
@@ -299,6 +309,28 @@ function availability(e::AbstractEdge, t::Int64)
         return a[t]
     end
 end
+nat_inflow(e::AbstractEdge) = e.natural_inflow;
+function natural_inflow(e::AbstractEdge, t::Int64)
+    n = nat_inflow(e)
+    if n === nothing
+        return nothing
+    elseif length(n) == 1
+        return n[1]
+    else
+        return n[t]
+    end
+end
+evap(e::AbstractEdge) = e.evap;
+function evap(e::AbstractEdge, t::Int64)
+    ev = evap(e)
+    if ev === nothing
+        return nothing
+    elseif length(ev) == 1
+        return ev[1]
+    else
+        return ev[t]
+    end
+end
 can_expand(e::AbstractEdge) = e.can_expand;
 can_retire(e::AbstractEdge) = e.can_retire;
 can_retrofit(e::AbstractEdge) = e.can_retrofit;
@@ -336,6 +368,7 @@ min_capacity(e::AbstractEdge) = e.min_capacity;
 min_retired_capacity(e::AbstractEdge) = e.can_retire ? e.min_retired_capacity : 0.0;
 min_retired_capacity_track(e::AbstractEdge) = e.min_retired_capacity_track;
 min_flow_fraction(e::AbstractEdge) = e.min_flow_fraction;
+min_flow(e::AbstractEdge) = e.min_flow;
 new_capacity(e::AbstractEdge) = e.new_capacity;
 new_capacity_track(e::AbstractEdge) = e.new_capacity_track;
 #### Note that edge "e" may not be present in the inputs for all case
@@ -356,6 +389,10 @@ retrofitted_capacity_track(e::AbstractEdge) = e.retrofitted_capacity_track;
 retrofitted_capacity_track(e::AbstractEdge,s::Int64) = (haskey(retrofitted_capacity_track(e),s) == false) ? 0.0 : e.retrofitted_capacity_track[s];
 retrofitted_units(e::AbstractEdge) = e.retrofitted_units;
 start_vertex(e::AbstractEdge)::AbstractVertex = e.start_vertex;
+travel_time(e::AbstractEdge) = e.travel_time;
+fd(e::AbstractEdge) = e.fd;
+pd(e::AbstractEdge) = e.pd;
+consumption(e::AbstractEdge) = e.consumption;
 variable_om_cost(e::AbstractEdge) = e.variable_om_cost;
 wacc(e::AbstractEdge) = e.wacc;
 annualized_investment_cost(e::AbstractEdge) = e.annualized_investment_cost;
@@ -834,13 +871,12 @@ end
 
 function update_balance_end!(e::AbstractEdge, model::Model)
     v = end_vertex(e)
-    effective_flow = @expression(model, [t in time_interval(e)], (1-loss_fraction(e,t)) * flow(e, t))
-    add_flow_to_vertex_balances!(e, v, effective_flow, false)
-end
 
-function update_balance_end!(e::BidirectionalEdge, model::Model)
-    v = end_vertex(e)
-    if lossy_edge(e)
+    if unidirectional(e) == true
+
+        effective_flow = @expression(model, [t in time_interval(e)], (1-loss_fraction(e,t)) * flow(e, timestepbefore(t, Int(travel_time(e)), subperiods(e))))
+        
+    elseif unidirectional(e) == false && lossy_edge(e)
         flow_pos = @variable(model, [t in time_interval(e)], lower_bound = 0.0, base_name = "vFLOWPOS_$(id(e))_period$(period_index(e))")
         flow_neg = @variable(model, [t in time_interval(e)], lower_bound = 0.0, base_name = "vFLOWNEG_$(id(e))_period$(period_index(e))")
         @constraint(model, [t in time_interval(e)], flow_pos[t] - flow_neg[t] == flow(e, t))

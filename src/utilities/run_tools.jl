@@ -1,3 +1,9 @@
+const GLOBAL_TDR_FLAG = Ref(0) 
+const GLOBAL_NUM_PERIODS = Ref(1)
+
+using MathOptInterface
+const MOI = MathOptInterface
+
 """
     run_case(case_path; kwargs...) -> (systems::Vector{System}, solution::Any)
 
@@ -125,6 +131,48 @@ function run_case(
         create_user_additions_module(case_path)
         load_user_additions(case_path)
 
+        # Time Domain Reduction
+        tdr_settings_file = joinpath(case_path, "settings", "TDR_settings.json")
+
+        if isfile(tdr_settings_file)
+            @info "Detected TDR_settings.json"
+            try
+                case_settings_path = joinpath(case_path, "settings", "case_settings.json")
+                case_settings_setup = to_string_keys(JSON3.read(read(case_settings_path, String)))
+
+                if haskey(case_settings_setup, "PeriodLengths")
+                    num_periods = length(case_settings_setup["PeriodLengths"])
+                else
+                    num_periods = 1
+                end
+                
+                @info "Detected $num_periods planning periods"
+                myTDRsetup = to_string_keys(JSON3.read(read(tdr_settings_file, String)))
+                TDR_flag = myTDRsetup["TimeDomainReduction"]
+
+                GLOBAL_TDR_FLAG[] = TDR_flag 
+                GLOBAL_NUM_PERIODS[] = num_periods
+
+                if TDR_flag == 1
+                    @info "Time Domain Reduction Enabled"
+                    # Cluster Subperiod Results: Incorporate Output-based TDR by solving individual subperiod level CEM
+                    if myTDRsetup["ClusterSubperiodResults"] == 1
+                        run_subperiod_cases(case_path, optimizer,optimizer_env, optimizer_attributes, myTDRsetup; num_periods = num_periods, v = false)
+                    end
+
+                    run_time_domain_reduction(case_path, myTDRsetup; num_periods = num_periods, v = false)
+                else
+                    @info "Time Domain Reduction Disabled"
+                end
+            catch e
+                @error "TDR Failed, possible issue with TDR_settings.json: $(e)"
+                rethrow(e)
+            end
+        else
+            @debug "No TDR_settings.json found — skipping time domain reduction"
+            GLOBAL_TDR_FLAG[] = 0
+        end
+
         case = load_case(case_path; lazy_load=lazy_load)
 
         # Create optimizer based on solution algorithm
@@ -152,9 +200,36 @@ function run_case(
         # Myopic outputs are written during iteration, so we don't need to write them here
         if !isa(solution_algorithm(case), Myopic)
             if length(case.systems) ≥ 1
+                if isa(solution_algorithm(case), Benders)
+                    case_path = joinpath(case_path, "benders_results")
+                elseif isa(solution_algorithm(case), Monolithic)
+                    case_path = joinpath(case_path, "monolithic_results")
+                end
                 case_path = create_output_path(case.systems[1], case_path)
             end
-            write_outputs(case_path, case, solution)
+
+            if solution isa JuMP.Model
+                println("termination_status = ", termination_status(solution))
+                println("primal_status      = ", primal_status(solution))
+                println("dual_status        = ", dual_status(solution))
+                println("has_values         = ", has_values(solution))
+
+                if termination_status(solution) != MOI.OPTIMAL
+                    @warn "Optimization did not terminate with an optimal solution. Attempting to debug infeasibility."
+                    debug_infeasibility!(case)
+                end
+
+                if has_values(solution)
+                    write_outputs(case_path, case, solution)
+                else
+                    @warn "No solution values available; skipping output writing."
+                end
+            elseif solution isa MacroEnergy.BendersResults
+                println("solution type      = ", typeof(solution))
+                write_outputs(case_path, case, solution)
+            else
+                @warn "Unknown solution type: $(typeof(solution))"
+            end
         end
 
         # If Benders, delete processes

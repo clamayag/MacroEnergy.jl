@@ -20,11 +20,19 @@ for each time `t` in `time_interval(e)` for the edge `e`.
 """
 function add_model_constraint!(ct::MinFlowConstraint, e::UnidirectionalEdge, model::Model)
     if has_capacity(e)
-        ct.constraint_ref = @constraint(
-            model,
-            [t in time_interval(e)],
-            flow(e, t) >= min_flow_fraction(e) * capacity(e)
-        )
+        if !isnothing(e.min_flow)
+            ct.constraint_ref = @constraint(
+                model,
+                [t in time_interval(e)],
+                flow(e, t) >= min_flow(e)
+            )
+        else
+            ct.constraint_ref = @constraint(
+                model,
+                [t in time_interval(e)],
+                flow(e, t) >= min_flow_fraction(e) * capacity(e)
+            )
+        end
     else
         warning("Min flow constraints are available only for unidirectional edges with capacity")
     end

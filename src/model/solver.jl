@@ -15,6 +15,7 @@ function solve_case(case::Case, opt::Optimizer, ::Monolithic)
         scale_constraints!(model)
     end
 
+    @info "Optimizing"
     optimize!(model)
 
     return (case, model)

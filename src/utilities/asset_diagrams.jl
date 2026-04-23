@@ -15,6 +15,7 @@ const COMMODITY_COLOURS = Dict{Symbol, String}(
     :LiquidFuels => "#ff9408", # Tangerine
     :NaturalGas => "#c6fcff",  # LightSkyBlue
     :Uranium => "#4B0082",     # Indigo
+    :Water => "#005BBB",       # DarkBlue
 )
 
 function random_colour()
