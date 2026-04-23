@@ -1,0 +1,4632 @@
+{
+  "thermalpower": [
+    {
+      "type": "ThermalPower",
+      "global_data": {
+        "edges": {
+          "elec_edge": {
+            "commodity": "Electricity",
+            "uc": true,
+            "has_capacity": true,
+            "unidirectional": true,
+            "can_retire": true,
+            "constraints": {
+              "CapacityConstraint": true,
+              "RampingLimitConstraint": true,
+              "MinFlowConstraint": true,
+              "MinUpTimeConstraint": true,
+              "MinDownTimeConstraint": true
+            }
+          },
+          "fuel_edge": {
+            "unidirectional": true,
+            "has_capacity": false
+          },
+          "co2_edge": {
+            "commodity": "CO2",
+            "unidirectional": true,
+            "has_capacity": false
+          }
+        },
+        "transforms": {
+          "timedata": "Electricity",
+          "constraints": {
+            "BalanceConstraint": true
+          }
+        }
+      },
+      "instance_data": [
+        {
+          "id": "coal_AC",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "AC",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_AL",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "AL",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_AM",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "AM",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_AP",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "AP",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_BA",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "BA",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_CE",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 1303.274,
+              "end_vertex": "CE",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_DF",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "DF",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_ES",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "ES",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_GO",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "GO",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_MA",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 440.237,
+              "end_vertex": "MA",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_MG",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 113.065,
+              "end_vertex": "MG",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_MS",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "MS",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_MT",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "MT",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_PA",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 103.854,
+              "end_vertex": "PA",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_PB",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "PB",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_PE",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "PE",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_PI",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "PI",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_PR",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 20.0,
+              "end_vertex": "PR",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_RJ",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 21.0,
+              "end_vertex": "RJ",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_RN",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "RN",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_RO",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "RO",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_RR",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "RR",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_RS",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 695.0,
+              "end_vertex": "RS",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_SC",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 862.0,
+              "end_vertex": "SC",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_SE",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "SE",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_SP",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 24.4,
+              "end_vertex": "SP",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "coal_TO",
+          "transforms": {
+            "fuel_consumption": 2.9,
+            "emission_rate": 0.34
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 2416918.429003021,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 57.07415548841893,
+              "lifetime": 30.0,
+              "capital_recovery_period": 25.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "TO",
+              "min_up_time": 12,
+              "min_down_time": 8,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 100,
+              "startup_fuel_consumption": 3.0,
+              "capacity_size": 500
+            },
+            "fuel_edge": {
+              "start_vertex": "coal_source",
+              "commodity": "Coal"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_AC",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "AC",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_AL",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 6.8775,
+              "end_vertex": "AL",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_AM",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 861.573,
+              "end_vertex": "AM",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_AP",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "AP",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_BA",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 366.292,
+              "end_vertex": "BA",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_CE",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 564.975,
+              "end_vertex": "CE",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_DF",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "DF",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_ES",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 557.566,
+              "end_vertex": "ES",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_GO",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "GO",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_MA",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 845.544,
+              "end_vertex": "MA",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_MG",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 381.6982,
+              "end_vertex": "MG",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_MS",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 391.774,
+              "end_vertex": "MS",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_MT",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 529.2,
+              "end_vertex": "MT",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_PA",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "PA",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_PB",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "PB",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_PE",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 595.153,
+              "end_vertex": "PE",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_PI",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "PI",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_PR",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 504.689,
+              "end_vertex": "PR",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_RJ",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 5096.37594,
+              "end_vertex": "RJ",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_RN",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 328.64715,
+              "end_vertex": "RN",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_RO",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 426.53,
+              "end_vertex": "RO",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_RR",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "RR",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_RS",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 903.259,
+              "end_vertex": "RS",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_SC",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 340.6052,
+              "end_vertex": "SC",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_SE",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 1524.0400000000002,
+              "end_vertex": "SE",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_SP",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 1110.9584,
+              "end_vertex": "SP",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "gas_TO",
+          "transforms": {
+            "fuel_consumption": 2.4,
+            "emission_rate": 0.22
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": false,
+              "investment_cost": 0.0,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 20,
+              "capital_recovery_period": 20,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "TO",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_AC",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 71.2036,
+              "end_vertex": "AC",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_AL",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 9.9036,
+              "end_vertex": "AL",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_AM",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 1058.4959,
+              "end_vertex": "AM",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_AP",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 44.207,
+              "end_vertex": "AP",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_BA",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 784.1466,
+              "end_vertex": "BA",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_CE",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 290.5591,
+              "end_vertex": "CE",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_DF",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 16.3584,
+              "end_vertex": "DF",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_ES",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 582.3664,
+              "end_vertex": "ES",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_GO",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 536.21859,
+              "end_vertex": "GO",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_MA",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 339.8066,
+              "end_vertex": "MA",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_MG",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 323.11908,
+              "end_vertex": "MG",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_MS",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 7.926,
+              "end_vertex": "MS",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_MT",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 82.845,
+              "end_vertex": "MT",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_PA",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 268.33995,
+              "end_vertex": "PA",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_PB",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 346.0548,
+              "end_vertex": "PB",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_PE",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 1158.6039999999998,
+              "end_vertex": "PE",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_PI",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 69.486,
+              "end_vertex": "PI",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_PR",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 123.30035,
+              "end_vertex": "PR",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_RJ",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 633.0694,
+              "end_vertex": "RJ",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_RN",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 305.7438,
+              "end_vertex": "RN",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_RO",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 182.422,
+              "end_vertex": "RO",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_RR",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 332.57278,
+              "end_vertex": "RR",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_RS",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 233.3712,
+              "end_vertex": "RS",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_SC",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 66.44456,
+              "end_vertex": "SC",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_SE",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 31.5954,
+              "end_vertex": "SE",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_SP",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 1530.54734,
+              "end_vertex": "SP",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "oil_TO",
+          "transforms": {
+            "fuel_consumption": 3.3,
+            "emission_rate": 0.27
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 694864.0483383685,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 250.43362265861023,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 18.529,
+              "end_vertex": "TO",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 45,
+              "startup_fuel_consumption": 0.8,
+              "capacity_size": 150
+            },
+            "fuel_edge": {
+              "start_vertex": "oil_source",
+              "commodity": "LiquidFuels"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_AC",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "AC",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_AC",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "AC",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_AL",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "AL",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_AL",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "AL",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_AM",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "AM",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_AM",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "AM",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_AP",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "AP",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_AP",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "AP",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_BA",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "BA",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_BA",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "BA",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_CE",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "CE",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_CE",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "CE",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_DF",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "DF",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_DF",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "DF",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_ES",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "ES",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_ES",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "ES",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_GO",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "GO",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_GO",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "GO",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_MA",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "MA",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_MA",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "MA",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_MG",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "MG",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_MG",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "MG",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_MS",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "MS",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_MS",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "MS",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_MT",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "MT",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_MT",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "MT",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_PA",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "PA",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_PA",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "PA",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_PB",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "PB",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_PB",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "PB",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_PE",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "PE",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_PE",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "PE",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_PI",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "PI",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_PI",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "PI",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_PR",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "PR",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_PR",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "PR",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_RJ",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "RJ",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_RJ",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "RJ",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_RN",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "RN",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_RN",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "RN",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_RO",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "RO",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_RO",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "RO",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_RR",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "RR",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_RR",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "RR",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_RS",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "RS",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_RS",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "RS",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_SC",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "SC",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_SC",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "SC",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_SE",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "SE",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_SE",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "SE",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_SP",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "SP",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_SP",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "SP",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ccgt_gas_TO",
+          "transforms": {
+            "fuel_consumption": 2.0,
+            "emission_rate": 0.181048235160161
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 906344.4108761328,
+              "fixed_om_cost": 48338.36858006043,
+              "variable_om_cost": 77.0392749244713,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.4,
+              "existing_capacity": 0.0,
+              "end_vertex": "TO",
+              "min_up_time": 2,
+              "min_down_time": 6,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 50,
+              "startup_fuel_consumption": 1.5,
+              "capacity_size": 400
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "ct_gas_TO",
+          "transforms": {
+            "fuel_consumption": 2.7,
+            "emission_rate": 0.25
+          },
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 740181.2688821752,
+              "fixed_om_cost": 81570.99697885197,
+              "variable_om_cost": 134.44108761329304,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "min_flow_fraction": 0.5,
+              "existing_capacity": 0.0,
+              "end_vertex": "TO",
+              "min_up_time": 1,
+              "min_down_time": 1,
+              "ramp_up_fraction": 1,
+              "ramp_down_fraction": 1,
+              "startup_cost": 10,
+              "startup_fuel_consumption": 0.5,
+              "capacity_size": 100
+            },
+            "fuel_edge": {
+              "start_vertex": "ng_source",
+              "commodity": "NaturalGas"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

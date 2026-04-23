@@ -1,0 +1,72 @@
+{
+  "TimeDomainReduction": 1,
+  "TimeDomainReductionFolder": "TDR_Results",
+  "TotalHoursModeled": 8760,
+  "TimestepsPerRepPeriod": 168,
+  "NumberOfSubperiods": 52,
+  "ClusterMethod": "kmeans",
+  "ClusterSubperiodResults": 0,
+  "ScalingMethod": "N",
+  "nReps": 300,
+  "ClusterAvailability": 1,
+  "ClusterDemand": 1,
+  "ClusterFuelPrices": 0,
+  "ClusterEvap": 0,
+  "ClusterInflow": 1,
+  "AvailabilityFileName": "availability",
+  "DemandFileName": "demand",
+  "FuelPricesFileName": "fuel_prices",
+  "EvapFileName": "evap_timeseries",
+  "InflowFileName": "inflow_timeseries",
+  "UseExtremePeriods": 4,
+  "ExtremePeriods": {
+    "Load": {
+      "System": {
+        "Absolute": {
+          "Max": 1,
+          "Min": 0
+        },
+        "Integral": {
+          "Max": 0,
+          "Min": 0
+        }
+      }
+    },
+    "PV": {
+      "System": {
+        "Absolute": {
+          "Max": 0,
+          "Min": 0
+        },
+        "Integral": {
+          "Max": 0,
+          "Min": 1
+        }
+      }
+    },
+    "Wind": {
+      "System": {
+        "Absolute": {
+          "Max": 0,
+          "Min": 0
+        },
+        "Integral": {
+          "Max": 0,
+          "Min": 1
+        }
+      }
+    },
+    "Inflow": {
+      "System": {
+        "Absolute": {
+          "Max": 0,
+          "Min": 0
+        },
+        "Integral": {
+          "Max": 0,
+          "Min": 1
+        }
+      }
+    }
+  }
+}
