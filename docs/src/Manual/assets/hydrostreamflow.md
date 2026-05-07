@@ -34,52 +34,67 @@ Here is a graphical representation of the Hydro Streamflow asset:
 flowchart LR
   subgraph HydroStreamflow
     direction LR
-    NI((Natural Inflow)) --> S[Storage]
-    IF((Inflow)) --> S
-    S --> D[Discharge]
-    S --> SP[Spill]
-    S --> DV[Diversion]
-    S --> EV[Evaporation]
-    D --> T((Transformation))
-    T --> G((Electricity))
-    T --> TR[Tailrace]
+    WS((Water Source)) --> NI((Natural Inflow))
+    WS --> IF((Inflow))
+    NI --> S[Storage]
+    IF --> S
+    S --> D((Discharge))
+    S --> SP((Spill))
+    S --> DV((Diversion))
+    S --> EV((Evaporation))
+    D --> T{{Transformation}}
+    T --> G((Generation))
+    G --> EB((Electricity Bus))
+    T --> H((Tailrace))
+    H --> WS
+    SP --> WS
+    DV --> WS
+    EV --> WS
+    WS --> SL((Slack))
+    WS --> RV((Reverse))
+    T --> PHS((PHS))
+    PHS --> S
+    EB --> L((Load))
+    L --> T
   end
 
-  PHS((PHS)) --> S
-  S --> PHS
-  L((Load)) --> T
-  SL((Slack)) --> S
-  RV((Reverse)) --> T
+  style WS font-size:21,r:55px,fill:#B3D4FC,stroke:black,color:black,stroke-dasharray: 3,5;
+  style EB font-size:21,r:55px,fill:#FFD700,stroke:black,color:black,stroke-dasharray: 3,5;
+  style S font-size:21,r:55px,fill:#B3D4FC,stroke:black,color:black;
+  style T fill:black,stroke:black,color:white;
+  style NI font-size:21,r:55px,fill:#B3D4FC,stroke:black,color:black;
+  style IF font-size:21,r:55px,fill:#B3D4FC,stroke:black,color:black;
+  style D font-size:21,r:55px,fill:#B3D4FC,stroke:black,color:black;
+  style SP font-size:21,r:55px,fill:#B3D4FC,stroke:black,color:black;
+  style DV font-size:21,r:55px,fill:#B3D4FC,stroke:black,color:black;
+  style EV font-size:21,r:55px,fill:#B3D4FC,stroke:black,color:black;
+  style H font-size:21,r:55px,fill:#B3D4FC,stroke:black,color:black;
+  style PHS font-size:21,r:55px,fill:#B3D4FC,stroke:black,color:black;
+  style SL font-size:21,r:55px,fill:#B3D4FC,stroke:black,color:black;
+  style RV font-size:21,r:55px,fill:#B3D4FC,stroke:black,color:black;
+  style G font-size:21,r:55px,fill:#FFD700,stroke:black,color:black;
+  style L font-size:21,r:55px,fill:#FFD700,stroke:black,color:black;
 
-  style NI fill:#B3D4FC,stroke:black,color:black
-  style IF fill:#B3D4FC,stroke:black,color:black
-  style S fill:#B3D4FC,stroke:black,color:black
-  style D fill:#B3D4FC,stroke:black,color:black
-  style SP fill:#B3D4FC,stroke:black,color:black
-  style DV fill:#B3D4FC,stroke:black,color:black
-  style EV fill:#B3D4FC,stroke:black,color:black
-  style PHS fill:#B3D4FC,stroke:black,color:black
-  style TR fill:#B3D4FC,stroke:black,color:black
-  style T r:48px,fill:#FFD700,stroke:black,color:black,stroke-dasharray: 3,5;
-  style G r:48px,fill:#FFD700,stroke:black,color:black,stroke-dasharray: 3,5;
-  style L r:48px,fill:#FFD700,stroke:black,color:black,stroke-dasharray: 3,5;
-  style SL fill:#B3D4FC,stroke:black,color:black
-  style RV fill:#B3D4FC,stroke:black,color:black
-
-  linkStyle 0 stroke:#B3D4FC, stroke-width: 2px;
-  linkStyle 1 stroke:#B3D4FC, stroke-width: 2px;
-  linkStyle 2 stroke:#B3D4FC, stroke-width: 2px;
-  linkStyle 3 stroke:#B3D4FC, stroke-width: 2px;
-  linkStyle 4 stroke:#B3D4FC, stroke-width: 2px;
-  linkStyle 5 stroke:#B3D4FC, stroke-width: 2px;
-  linkStyle 6 stroke:#B3D4FC, stroke-width: 2px;
-  linkStyle 7 stroke:#FFD700, stroke-width: 2px;
-  linkStyle 8 stroke:#B3D4FC, stroke-width: 2px;
-  linkStyle 9 stroke:#B3D4FC, stroke-width: 2px;
-  linkStyle 10 stroke:#B3D4FC, stroke-width: 2px;
-  linkStyle 11 stroke:#FFD700, stroke-width: 2px;
-  linkStyle 12 stroke:#B3D4FC, stroke-width: 2px;
-  linkStyle 13 stroke:#B3D4FC, stroke-width: 2px;
+  linkStyle 0 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 1 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 2 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 3 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 4 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 5 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 6 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 7 stroke:#FFD700,stroke-width:2px; a@{ animate: true };
+  linkStyle 8 stroke:#FFD700,stroke-width:2px; a@{ animate: true };
+  linkStyle 9 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 10 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 11 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 12 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 13 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 14 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 15 stroke:#FFD700,stroke-width:2px; a@{ animate: true };
+  linkStyle 16 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 17 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 18 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
+  linkStyle 19 stroke:#B3D4FC,stroke-width:2px; a@{ animate: true };
 ```
 
 > **Diagram note:** If Mermaid is not rendered in your preview, the asset structure is:
