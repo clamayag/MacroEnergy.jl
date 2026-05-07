@@ -10,7 +10,7 @@ Hydro Streamflow assets in Macro represent hydroelectric power generation system
 
 ## [Asset Structure](@id hydrostreamflow_asset_structure)
 
-A Hydro Streamflow asset consists of one transformation component, one storage component, and thirteen edge components:
+A Hydro Streamflow asset consists of one transformation component, one storage component, and twelve edge components:
 
 1. **Storage Component**: Water storage reservoir
 2. **Transformation Component**: Converts water flow to electricity
@@ -21,7 +21,7 @@ A Hydro Streamflow asset consists of one transformation component, one storage c
 7. **Generation Edge**: Electricity output from transformation
 8. **Tailrace Edge**: Water outflow from transformation back to river
 9. **Diversion Edge**: Water diversion from storage for other uses
-10. **Evaporation Edge**: Water loss due to evaporation (bidirectional)
+10. **Evaporation Edge**: Water loss due to evaporation
 11. **PHS Edge**: Water flow for pumped hydro storage operations
 12. **Load Edge**: Electricity consumption for pumping
 13. **Slack Edge**: Slack water flow for operational flexibility
@@ -30,44 +30,36 @@ A Hydro Streamflow asset consists of one transformation component, one storage c
 Here is a graphical representation of the Hydro Streamflow asset:
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'background': '#D1EBDE' }}}%%
 flowchart TD
-  subgraph HydroStreamflow
-  direction BT
-    S((Storage))
-    T{{..}}
-    I((Natural Inflow)) --> S
-    IF((Inflow)) --> S
-    S --> D((Discharge))
-    D --> T
-    T --> G((Electricity))
-    T --> TR((Tailrace))
-    S --> SP((Spill))
-    S --> DV((Diversion))
-    S <--> EV((Evaporation))
-    T --> PHS((PHS))
-    PHS --> S
-    L((Load)) --> T
-    SL((Slack)) --> S
-    RV((Reverse)) --> T
-    style T fill:black,stroke:black,color:black;
-    style S r:55px,fill:#87CEEB,stroke:black,color:black, stroke-dasharray: 3,5;
-    style I r:45px,fill:#87CEEB,stroke:black,color:black, stroke-dasharray: 3,5;
-    style IF r:45px,fill:#87CEEB,stroke:black,color:black, stroke-dasharray: 3,5;
-    style D r:45px,fill:#87CEEB,stroke:black,color:black, stroke-dasharray: 3,5;
-    style G font-size:19px,r:55px,fill:#FFD700,stroke:black,color:black, stroke-dasharray: 3,5;
-    style TR r:45px,fill:#87CEEB,stroke:black,color:black, stroke-dasharray: 3,5;
-    style SP r:45px,fill:#87CEEB,stroke:black,color:black, stroke-dasharray: 3,5;
-    style DV r:45px,fill:#87CEEB,stroke:black,color:black, stroke-dasharray: 3,5;
-    style EV r:45px,fill:#87CEEB,stroke:black,color:black, stroke-dasharray: 3,5;
-    style PHS r:45px,fill:#87CEEB,stroke:black,color:black, stroke-dasharray: 3,5;
-    style L r:45px,fill:#FFD700,stroke:black,color:black, stroke-dasharray: 3,5;
-    style SL r:45px,fill:#87CEEB,stroke:black,color:black, stroke-dasharray: 3,5;
-    style RV r:45px,fill:#87CEEB,stroke:black,color:black, stroke-dasharray: 3,5;
-
-    linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12 stroke:#87CEEB, stroke-width: 2px;
-    linkStyle 13 stroke:#FFD700, stroke-width: 2px;
+  NI[Natural Inflow] --> S[Storage]
+  IF[Inflow] --> S
+  S --> D[Discharge]
+  D --> T[Transformation]
+  T --> G[Electricity]
+  T --> TR[Tailrace]
+  S --> SP[Spill]
+  S --> DV[Diversion]
+  S --> EV[Evaporation]
+  T --> PHS[PHS]
+  PHS --> S
+  L[Load] --> T
+  SL[Slack] --> S
+  RV[Reverse] --> T
 ```
+
+> **Diagram note:** If Mermaid is not rendered in your preview, the asset structure is:
+> - Natural Inflow → Storage
+> - Inflow → Storage
+> - Storage → Discharge → Transformation
+> - Transformation → Electricity
+> - Transformation → Tailrace
+> - Storage → Spill
+> - Storage → Diversion
+> - Storage → Evaporation
+> - Transformation → PHS → Storage
+> - Load → Transformation
+> - Slack → Storage
+> - Reverse → Transformation
 
 ## [Flow Equations](@id hydrostreamflow_flow_equations)
 The Hydro Streamflow asset follows these key relationships:
@@ -187,9 +179,9 @@ The following is an example of a Hydro Streamflow asset input file:
         }
     ]
 }
+```
 
-!!! tip "Global Data vs Instance Data"
-    When working with JSON input files, the `global_data` field can be used to group data that is common to all instances of the same asset type. This is useful for setting constraints that are common to all instances of the same asset type and avoid repeating the same data for each instance. See the [Examples](@ref "hydrostreamflow_examples") section below for an example.
+> **Tip:** When working with JSON input files, the `global_data` field can be used to group data that is common to all instances of the same asset type. This is useful for setting constraints that are common to all instances of the same asset type and avoids repeating the same data for each instance. See the [Examples](@ref "hydrostreamflow_examples") section below for an example.
 
 The following tables outline the attributes that can be set for a Hydro Streamflow asset.
 
@@ -699,18 +691,17 @@ Below is an example of an input file for a Hydro Streamflow asset that sets up a
 - Edge capacities and constraints control the flow of water and electricity through the system.
 - Time series data for natural inflows should be provided to model realistic streamflow variations.
 
-!!! note "Storage Component"
-    The storage component represents the water reservoir and includes constraints for maximum and minimum storage levels, which are crucial for operational feasibility.
+> **Note:** The storage component represents the water reservoir and includes constraints for maximum and minimum storage levels, which are crucial for operational feasibility.
 
-!!! tip "Prefixes"
-    Users can apply prefixes to adjust parameters for the components of a Hydro Streamflow asset, even when using the standard format. For instance, `storage_max_capacity` will adjust the `max_capacity` parameter for the storage component, and `discharge_investment_cost` will adjust the `investment_cost` parameter for the discharge edge.
-    Below are the prefixes available for modifying parameters for the components of a Hydro Streamflow asset:
-    - `storage_` for the storage component
-    - `transform_` for the transformation component
-    - `discharge_` for the discharge edge
-    - `inflow_` for the inflow edge
-    - `natural_inflow_` for the natural inflow edge
-    - `spill_` for the spill edge
+> **Tip:** Users can apply prefixes to adjust parameters for the components of a Hydro Streamflow asset, even when using the standard format. For instance, `storage_max_capacity` will adjust the `max_capacity` parameter for the storage component, and `discharge_investment_cost` will adjust the `investment_cost` parameter for the discharge edge.
+>
+> Below are the prefixes available for modifying parameters for the components of a Hydro Streamflow asset:
+> - `storage_` for the storage component
+> - `transform_` for the transformation component
+> - `discharge_` for the discharge edge
+> - `inflow_` for the inflow edge
+> - `natural_inflow_` for the natural inflow edge
+> - `spill_` for the spill edge
     - `gen_` for the generation edge
     - `tailrace_` for the tailrace edge
     - `div_` for the diversion edge
