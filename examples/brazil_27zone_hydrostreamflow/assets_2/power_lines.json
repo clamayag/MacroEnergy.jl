@@ -1,0 +1,839 @@
+{
+  "transmissionlink": [
+    {
+      "type": "TransmissionLink",
+      "global_data": {
+        "edges": {
+          "transmission_edge": {
+            "commodity": "Electricity",
+            "has_capacity": true,
+            "can_expand": true,
+            "can_retire": true,
+            "constraints": {
+              "CapacityConstraint": true,
+              "MaxCapacityConstraint": false
+            }
+          }
+        }
+      },
+      "instance_data": [
+        {
+          "id": "AC_to_RO",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "AC",
+              "end_vertex": "RO",
+              "unidirectional": false,
+              "existing_capacity": 462.94983269251503,
+              "loss_fraction": 0.0028188488424549796,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "AL_to_BA",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "AL",
+              "end_vertex": "BA",
+              "unidirectional": false,
+              "existing_capacity": 9740.762027947145,
+              "loss_fraction": 0.0018465574054712386,
+              "investment_cost": 211480.36253776436,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "AL_to_PE",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "AL",
+              "end_vertex": "PE",
+              "unidirectional": false,
+              "existing_capacity": 6690.456466794476,
+              "loss_fraction": 0.002183883006057208,
+              "investment_cost": 211480.36253776436,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "AL_to_SE",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "AL",
+              "end_vertex": "SE",
+              "unidirectional": false,
+              "existing_capacity": 9677.314272048832,
+              "loss_fraction": 0.001337261890860586,
+              "investment_cost": 211480.36253776436,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "AM_to_PA",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "AM",
+              "end_vertex": "PA",
+              "unidirectional": false,
+              "existing_capacity": 2187.8536516659506,
+              "loss_fraction": 0.0005964684150634447,
+              "investment_cost": 251762.83987915408,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "AP_to_PA",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "AP",
+              "end_vertex": "PA",
+              "unidirectional": false,
+              "existing_capacity": 694.4247490387726,
+              "loss_fraction": 0.0028188488424549796,
+              "investment_cost": 251762.83987915408,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "ARG_to_RS",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "ARG",
+              "end_vertex": "RS",
+              "unidirectional": false,
+              "existing_capacity": 76.24232405325503,
+              "loss_fraction": 0.008558144155524805,
+              "investment_cost": 196374.62235649547,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "BA_to_GO",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "BA",
+              "end_vertex": "GO",
+              "unidirectional": false,
+              "existing_capacity": 2187.8536516659506,
+              "loss_fraction": 0.0005964684150634447,
+              "investment_cost": 422960.7250755287,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "BA_to_MG",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "BA",
+              "end_vertex": "MG",
+              "unidirectional": false,
+              "existing_capacity": 3281.780477498926,
+              "loss_fraction": 0.0005964684150634447,
+              "investment_cost": 422960.7250755287,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "BA_to_PE",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "BA",
+              "end_vertex": "PE",
+              "unidirectional": false,
+              "existing_capacity": 3281.780477498926,
+              "loss_fraction": 0.0005964684150634447,
+              "investment_cost": 211480.36253776436,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "BA_to_PI",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "BA",
+              "end_vertex": "PI",
+              "unidirectional": false,
+              "existing_capacity": 3281.780477498926,
+              "loss_fraction": 0.0005964684150634447,
+              "investment_cost": 211480.36253776436,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "BA_to_SE",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "BA",
+              "end_vertex": "SE",
+              "unidirectional": false,
+              "existing_capacity": 1325.4017421792328,
+              "loss_fraction": 0.0017076586287592121,
+              "investment_cost": 211480.36253776436,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "CE_to_PB",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "CE",
+              "end_vertex": "PB",
+              "unidirectional": false,
+              "existing_capacity": 462.94983269251503,
+              "loss_fraction": 0.0028188488424549796,
+              "investment_cost": 211480.36253776436,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "CE_to_PE",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "CE",
+              "end_vertex": "PE",
+              "unidirectional": false,
+              "existing_capacity": 1788.3515748717475,
+              "loss_fraction": 0.002263253735607207,
+              "investment_cost": 211480.36253776436,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "CE_to_PI",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "CE",
+              "end_vertex": "PI",
+              "unidirectional": false,
+              "existing_capacity": 4838.657136024416,
+              "loss_fraction": 0.001337261890860586,
+              "investment_cost": 211480.36253776436,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "CE_to_RN",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "CE",
+              "end_vertex": "RN",
+              "unidirectional": false,
+              "existing_capacity": 3113.7533170509805,
+              "loss_fraction": 0.0020780553666578383,
+              "investment_cost": 211480.36253776436,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "DF_to_GO",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "DF",
+              "end_vertex": "GO",
+              "unidirectional": false,
+              "existing_capacity": 8588.966473027605,
+              "loss_fraction": 0.0011795430271419605,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "DF_to_MG",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "DF",
+              "end_vertex": "MG",
+              "unidirectional": false,
+              "existing_capacity": 2187.8536516659506,
+              "loss_fraction": 0.0005964684150634447,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "ES_to_MG",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "ES",
+              "end_vertex": "MG",
+              "unidirectional": false,
+              "existing_capacity": 2077.69522030457,
+              "loss_fraction": 0.0018717469519328178,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "ES_to_RJ",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "ES",
+              "end_vertex": "RJ",
+              "unidirectional": false,
+              "existing_capacity": 1041.637123558159,
+              "loss_fraction": 0.0012528217077577564,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "GO_to_MG",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "GO",
+              "end_vertex": "MG",
+              "unidirectional": false,
+              "existing_capacity": 15846.95217706423,
+              "loss_fraction": 0.0012505165158154252,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "GO_to_MS",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "GO",
+              "end_vertex": "MS",
+              "unidirectional": false,
+              "existing_capacity": 462.94983269251503,
+              "loss_fraction": 0.0028188488424549796,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "GO_to_MT",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "GO",
+              "end_vertex": "MT",
+              "unidirectional": false,
+              "existing_capacity": 3976.2052265376974,
+              "loss_fraction": 0.0017076586287592121,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "GO_to_TO",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "GO",
+              "end_vertex": "TO",
+              "unidirectional": false,
+              "existing_capacity": 3513.255393845184,
+              "loss_fraction": 0.0011520635219112174,
+              "investment_cost": 543806.6465256797,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "MA_to_PA",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "MA",
+              "end_vertex": "PA",
+              "unidirectional": false,
+              "existing_capacity": 4375.707303331901,
+              "loss_fraction": 0.0005964684150634447,
+              "investment_cost": 251762.83987915408,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "MA_to_PI",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "MA",
+              "end_vertex": "PI",
+              "unidirectional": false,
+              "existing_capacity": 6627.008710896163,
+              "loss_fraction": 0.0017076586287592121,
+              "investment_cost": 422960.7250755287,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "MA_to_TO",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "MA",
+              "end_vertex": "TO",
+              "unidirectional": false,
+              "existing_capacity": 2187.8536516659506,
+              "loss_fraction": 0.0005964684150634447,
+              "investment_cost": 251762.83987915408,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "MG_to_MS",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "MG",
+              "end_vertex": "MS",
+              "unidirectional": false,
+              "existing_capacity": 847.1369339250559,
+              "loss_fraction": 0.0007702329739972535,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "MG_to_RJ",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "MG",
+              "end_vertex": "RJ",
+              "unidirectional": false,
+              "existing_capacity": 1041.637123558159,
+              "loss_fraction": 0.0012528217077577564,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "MG_to_SP",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "MG",
+              "end_vertex": "SP",
+              "unidirectional": false,
+              "existing_capacity": 23832.18043491461,
+              "loss_fraction": 0.0008667332485458035,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "MS_to_PR",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "MS",
+              "end_vertex": "PR",
+              "unidirectional": false,
+              "existing_capacity": 231.47491634625752,
+              "loss_fraction": 0.0028188488424549796,
+              "investment_cost": 241691.8429003021,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "MS_to_SP",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "MS",
+              "end_vertex": "SP",
+              "unidirectional": false,
+              "existing_capacity": 11938.679806410755,
+              "loss_fraction": 0.0012522602371636271,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "MT_to_PA",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "MT",
+              "end_vertex": "PA",
+              "unidirectional": false,
+              "existing_capacity": 3281.780477498926,
+              "loss_fraction": 0.0005964684150634447,
+              "investment_cost": 543806.6465256797,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "MT_to_RO",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "MT",
+              "end_vertex": "RO",
+              "unidirectional": false,
+              "existing_capacity": 694.4247490387726,
+              "loss_fraction": 0.0028188488424549796,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "PA_to_TO",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "PA",
+              "end_vertex": "TO",
+              "unidirectional": false,
+              "existing_capacity": 1093.9268258329753,
+              "loss_fraction": 0.0005964684150634447,
+              "investment_cost": 251762.83987915408,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "PB_to_PE",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "PB",
+              "end_vertex": "PE",
+              "unidirectional": false,
+              "existing_capacity": 4271.127898782268,
+              "loss_fraction": 0.0024147796738384075,
+              "investment_cost": 211480.36253776436,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "PB_to_RN",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "PB",
+              "end_vertex": "RN",
+              "unidirectional": false,
+              "existing_capacity": 3113.7533170509805,
+              "loss_fraction": 0.0020780553666578383,
+              "investment_cost": 211480.36253776436,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "PE_to_SE",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "PE",
+              "end_vertex": "SE",
+              "unidirectional": false,
+              "existing_capacity": 1093.9268258329753,
+              "loss_fraction": 0.0005964684150634447,
+              "investment_cost": 211480.36253776436,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "PI_to_TO",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "PI",
+              "end_vertex": "TO",
+              "unidirectional": false,
+              "existing_capacity": 2187.8536516659506,
+              "loss_fraction": 0.0005964684150634447,
+              "investment_cost": 422960.7250755287,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "PR_to_PRY",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "PR",
+              "end_vertex": "PRY",
+              "unidirectional": false,
+              "existing_capacity": 8751.414606663802,
+              "loss_fraction": 0.0005964684150634447,
+              "investment_cost": 196374.62235649547,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "PR_to_SC",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "PR",
+              "end_vertex": "SC",
+              "unidirectional": false,
+              "existing_capacity": 6676.01663269348,
+              "loss_fraction": 0.0020595707067804225,
+              "investment_cost": 196374.62235649547,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "PR_to_SP",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "PR",
+              "end_vertex": "SP",
+              "unidirectional": false,
+              "existing_capacity": 18841.46747009941,
+              "loss_fraction": 0.0013442340811240516,
+              "investment_cost": 241691.8429003021,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "RJ_to_SP",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "RJ",
+              "end_vertex": "SP",
+              "unidirectional": false,
+              "existing_capacity": 5701.109045511133,
+              "loss_fraction": 0.0009668651529619599,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "RR_to_VEN",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "RR",
+              "end_vertex": "VEN",
+              "unidirectional": false,
+              "existing_capacity": 231.47491634625752,
+              "loss_fraction": 0.0028188488424549796,
+              "investment_cost": 251762.83987915408,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "RS_to_SC",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "RS",
+              "end_vertex": "SC",
+              "unidirectional": false,
+              "existing_capacity": 10757.12944182856,
+              "loss_fraction": 0.0018809170277983567,
+              "investment_cost": 196374.62235649547,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "ac"
+            }
+          }
+        },
+        {
+          "id": "ARG_to_RS_45",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "ARG",
+              "end_vertex": "RS",
+              "unidirectional": false,
+              "existing_capacity": 2200.0,
+              "loss_fraction": 0.0,
+              "investment_cost": 196374.62235649547,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "hvdc"
+            }
+          }
+        },
+        {
+          "id": "MG_to_PA",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "MG",
+              "end_vertex": "PA",
+              "unidirectional": false,
+              "existing_capacity": 4000.0,
+              "loss_fraction": 0.0,
+              "investment_cost": 543806.6465256797,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "hvdc"
+            }
+          }
+        },
+        {
+          "id": "PA_to_RJ",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "PA",
+              "end_vertex": "RJ",
+              "unidirectional": false,
+              "existing_capacity": 4000.0,
+              "loss_fraction": 0.0,
+              "investment_cost": 543806.6465256797,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "hvdc"
+            }
+          }
+        },
+        {
+          "id": "PR_to_SP_48",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "PR",
+              "end_vertex": "SP",
+              "unidirectional": false,
+              "existing_capacity": 6300.0,
+              "loss_fraction": 0.0,
+              "investment_cost": 241691.8429003021,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "hvdc"
+            }
+          }
+        },
+        {
+          "id": "RO_to_SP",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "RO",
+              "end_vertex": "SP",
+              "unidirectional": false,
+              "existing_capacity": 6300.0,
+              "loss_fraction": 0.0,
+              "investment_cost": 201409.3655589124,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "hvdc"
+            }
+          }
+        },
+        {
+          "id": "RS_to_URY",
+          "edges": {
+            "transmission_edge": {
+              "start_vertex": "RS",
+              "end_vertex": "URY",
+              "unidirectional": false,
+              "existing_capacity": 570.0,
+              "loss_fraction": 0.0,
+              "investment_cost": 196374.62235649547,
+              "lifetime": 50.0,
+              "capital_recovery_period": 25.0,
+              "type": "hvdc"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

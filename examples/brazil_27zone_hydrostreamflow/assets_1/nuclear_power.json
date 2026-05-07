@@ -1,0 +1,540 @@
+{
+  "nuclearpower": [
+    {
+      "type": "ThermalPower",
+      "global_data": {
+        "edges": {
+          "elec_edge": {
+            "commodity": "Electricity",
+            "uc": true,
+            "has_capacity": true,
+            "unidirectional": true,
+            "integer_decisions": false,
+            "can_expand": true,
+            "can_retire": false,
+            "min_up_time": 36,
+            "min_down_time": 36,
+            "ramp_up_fraction": 0.01,
+            "ramp_down_fraction": 0.01,
+            "startup_fuel_consumption": 0.0,
+            "startup_cost": 1000,
+            "capacity_size": 1000,
+            "constraints": {
+              "CapacityConstraint": true,
+              "RampingLimitConstraint": true,
+              "MinFlowConstraint": true,
+              "MinUpTimeConstraint": true,
+              "MinDownTimeConstraint": true
+            }
+          },
+          "fuel_edge": {
+            "commodity": "Uranium",
+            "unidirectional": true,
+            "has_capacity": false,
+            "start_vertex": "uranium_source"
+          },
+          "co2_edge": {
+            "commodity": "CO2",
+            "unidirectional": true,
+            "has_capacity": false
+          }
+        },
+        "transforms": {
+          "timedata": "Uranium",
+          "fuel_consumption": 3.0643511097709952,
+          "constraints": {
+            "BalanceConstraint": true
+          }
+        }
+      },
+      "instance_data": [
+        {
+          "id": "nuclear_AC",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "AC"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_AL",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "AL"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_AM",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "AM"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_AP",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "AP"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_BA",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "BA"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_CE",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "CE"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_DF",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "DF"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_ES",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "ES"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_GO",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "GO"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_MA",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "MA"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_MG",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "MG"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_MS",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "MS"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_MT",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "MT"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_PA",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "PA"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_PB",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "PB"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_PE",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "PE"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_PI",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "PI"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_PR",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "PR"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_RJ",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 1990.0,
+              "end_vertex": "RJ"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_RN",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "RN"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_RO",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "RO"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_RR",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "RR"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_RS",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "RS"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_SC",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "SC"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_SE",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "SE"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_SP",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "SP"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        },
+        {
+          "id": "nuclear_TO",
+          "edges": {
+            "elec_edge": {
+              "investment_cost": 401714.7002819742,
+              "fixed_om_cost": 96676.73716012086,
+              "variable_om_cost": 7.535750151057402,
+              "lifetime": 50.0,
+              "capital_recovery_period": 30.0,
+              "min_flow_fraction": 0.7,
+              "existing_capacity": 0.0,
+              "end_vertex": "TO"
+            },
+            "co2_edge": {
+              "end_vertex": "co2_sink"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -11,19 +11,45 @@
         "path": "settings/macro_settings.json"
       },
       "assets": {
-        "path": "assets"
+        "path": "assets_1"
       },
       "time_data": {
         "path": "system/time_data.json"
       },
       "TDR_time_data": {
-        "path": "system/TDR_Results/time_data.json"
+        "path": "system/TDR_Results/time_data_1.json"
       },
       "TDR_settings": {
         "path": "settings/TDR_settings.json"
       },
       "nodes": {
-        "path": "system/nodes.json"
+        "path": "system/nodes_1.json"
+      }
+    },
+    {
+      "commodities": {
+        "path": "system/commodities.json"
+      },
+      "locations": {
+        "path": "system/locations.json"
+      },
+      "settings": {
+        "path": "settings/macro_settings.json"
+      },
+      "assets": {
+        "path": "assets_2"
+      },
+      "time_data": {
+        "path": "system/time_data.json"
+      },
+      "TDR_time_data": {
+        "path": "system/TDR_Results/time_data_2.json"
+      },
+      "TDR_settings": {
+        "path": "settings/TDR_settings.json"
+      },
+      "nodes": {
+        "path": "system/nodes_2.json"
       }
     }
   ],

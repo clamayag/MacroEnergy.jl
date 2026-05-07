@@ -379,6 +379,8 @@ function planning_model!(g::LongDurationStorage, model::Model)
     @constraint(model, retired_capacity(g) <= existing_capacity(g))
 
     MODELED_SUBPERIODS = modeled_subperiods(g)
+    #println("MODELED SUBPERIODS: ", MODELED_SUBPERIODS)
+    #println("SUBPERIOD INDICES: ", subperiod_indices(g))
     NPeriods = length(MODELED_SUBPERIODS);
 
     @constraint(model,[r in MODELED_SUBPERIODS], 
@@ -386,9 +388,12 @@ function planning_model!(g::LongDurationStorage, model::Model)
     )
 
     @info "ADDING INIT CONSTRAINT" id=g.id period=period_index(g) init=initial_storage_level(g) obj=objectid(g)
-    @constraint(model, storage_initial(g, first(MODELED_SUBPERIODS)) == initial_storage_level(g)*capacity(g))
+    @constraint(model, storage_initial(g, first(MODELED_SUBPERIODS)) == initial_storage_level(g)*capacity(g)) 
 
-    @constraint(model, [r in MODELED_SUBPERIODS], 
+    #@info "ADDING TERMINAL CONSTRAINT" id=g.id period=period_index(g) term=terminal_storage_level(g) obj=objectid(g)
+    #@constraint(model, storage_level(g,subperiod_end[last(MODELED_SUBPERIODS)]) == terminal_storage_level(g)*capacity(g)) 
+
+    @constraint(model, [r in MODELED_SUBPERIODS],#[1:end-1]], 
         storage_initial(g, mod1(r + 1, NPeriods)) == storage_initial(g, r) + storage_change(g, subperiod_map(g,r))
     )
 

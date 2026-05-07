@@ -13,6 +13,7 @@ struct HydroStreamflow <: AbstractAsset
     phs_edge::Edge{<:Water}
     load_edge::Edge{<:Electricity}
     slack_edge::Edge{<:Water}
+    rev_edge::Edge{<:Water}
 end
 
 function default_data(t::Type{HydroStreamflow}, id=missing, style="full")
@@ -144,6 +145,14 @@ function full_default_data(::Type{HydroStreamflow}, id=missing)
                 :has_capacity => false,
                 :unidirectional => true,
             ),
+            :rev_edge => @edge_data(
+                :commodity => "Water",
+                :has_capacity => false,
+                :unidirectional => true,
+                :constraints => Dict{Symbol, Bool}(
+                    :CapacityConstraint => true,
+                ),
+            ),
         ),
     )
 end
@@ -186,6 +195,8 @@ function simple_default_data(::Type{HydroStreamflow}, id=missing)
         :load_unidirectional => true,
         :slack_can_expand => false,
         :slack_can_retire => false,
+        :rev_can_expand => false,
+        :rev_can_retire => false,
         :hydro_source => missing,
         :storage_long_duration => false,
         :storage_existing_capacity => 0.0,
@@ -207,6 +218,7 @@ function simple_default_data(::Type{HydroStreamflow}, id=missing)
         :phs_fixed_om_cost => 0.0,
         :phs_variable_om_cost => 0.0,
         :slack_variable_om_cost => 0.0,
+        :rev_variable_om_cost => 0.0,
         :discharge_efficiency => 1.0,
         :inflow_efficiency => 1.0,
     )
@@ -546,6 +558,32 @@ function make(asset_type::Type{HydroStreamflow}, data::AbstractDict{Symbol,Any},
         slack_end_node,
     )
 
+    rev_edge_key = :rev_edge
+    @process_data(
+        rev_edge_data,
+        data[:edges][rev_edge_key],
+        [
+            (data[:edges][rev_edge_key], key),
+            (data[:edges][rev_edge_key], Symbol("rev_", key)),
+            (data, Symbol("rev_", key)),
+        ]
+    )
+    @start_vertex(
+        rev_start_node,
+        rev_edge_data,
+        Water,
+        [(rev_edge_data, :start_vertex), (data, :hydro_source), (data, :location),],
+    )
+    rev_end_node = elec_transform
+    rev_edge = Edge(
+        Symbol(id, "_", rev_edge_key),
+        rev_edge_data,
+        system.time_data[:Water],
+        Water,
+        rev_start_node,
+        rev_end_node,
+    )
+
     hydrostor.balance_data = Dict(
         :storage => Dict(
             discharge_edge.id => 1.0,
@@ -568,11 +606,16 @@ function make(asset_type::Type{HydroStreamflow}, data::AbstractDict{Symbol,Any},
         :pump => Dict(
             phs_edge.id => electricity_consumption,
             load_edge.id => 1.0,
-        )
+        ),
+        :phs => Dict(
+            phs_edge.id => 1.0,
+            rev_edge.id => 1.0,
+        ),
     )
 
     push!(spill_edge.constraints, MinHydroFlowConstraint(discharge_edge=discharge_edge, slack_edge=slack_edge))
     push!(elec_transform.constraints,HydroGenConstraint(gen_edge=gen_edge,discharge_edge=discharge_edge,hydrostor=hydrostor))
+    push!(phs_edge.constraints, PHSConstraint(load_edge=load_edge, electricity_consumption=electricity_consumption))
 
-    return HydroStreamflow(id,elec_transform,hydrostor,discharge_edge,inflow_edge,natural_inflow_edge,spill_edge,gen_edge,tailrace_edge,div_edge,evap_edge,phs_edge,load_edge,slack_edge)
+    return HydroStreamflow(id,elec_transform,hydrostor,discharge_edge,inflow_edge,natural_inflow_edge,spill_edge,gen_edge,tailrace_edge,div_edge,evap_edge,phs_edge,load_edge,slack_edge,rev_edge)
 end

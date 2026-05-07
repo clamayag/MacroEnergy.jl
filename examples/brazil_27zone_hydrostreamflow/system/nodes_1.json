@@ -1,0 +1,990 @@
+{
+  "nodes": [
+    {
+      "type": "Electricity",
+      "global_data": {
+        "time_interval": "Electricity",
+        "max_nsd": [
+          0.05
+        ],
+        "price_nsd": [
+          1000000.0
+        ],
+        "constraints": {
+          "BalanceConstraint": true,
+          "MaxNonServedDemandConstraint": true,
+          "MaxNonServedDemandPerSegmentConstraint": true
+        }
+      },
+      "instance_data": [
+        {
+          "id": "MG",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_MG"
+            }
+          }
+        },
+        {
+          "id": "SP",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_SP"
+            }
+          }
+        },
+        {
+          "id": "GO",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_GO"
+            }
+          }
+        },
+        {
+          "id": "RJ",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_RJ"
+            }
+          }
+        },
+        {
+          "id": "ES",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_ES"
+            }
+          }
+        },
+        {
+          "id": "RO",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_RO"
+            }
+          }
+        },
+        {
+          "id": "MS",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_MS"
+            }
+          }
+        },
+        {
+          "id": "MT",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_MT"
+            }
+          }
+        },
+        {
+          "id": "AC",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_AC"
+            }
+          }
+        },
+        {
+          "id": "DF",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_DF"
+            }
+          }
+        },
+        {
+          "id": "PA",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_PA"
+            }
+          }
+        },
+        {
+          "id": "TO",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_TO"
+            }
+          }
+        },
+        {
+          "id": "MA",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_MA"
+            }
+          }
+        },
+        {
+          "id": "AP",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_AP"
+            }
+          }
+        },
+        {
+          "id": "AM",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_AM"
+            }
+          }
+        },
+        {
+          "id": "RR",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_RR"
+            }
+          }
+        },
+        {
+          "id": "SC",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_SC"
+            }
+          }
+        },
+        {
+          "id": "PR",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_PR"
+            }
+          }
+        },
+        {
+          "id": "RS",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_RS"
+            }
+          }
+        },
+        {
+          "id": "PI",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_PI"
+            }
+          }
+        },
+        {
+          "id": "CE",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_CE"
+            }
+          }
+        },
+        {
+          "id": "RN",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_RN"
+            }
+          }
+        },
+        {
+          "id": "PB",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_PB"
+            }
+          }
+        },
+        {
+          "id": "PE",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_PE"
+            }
+          }
+        },
+        {
+          "id": "AL",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_AL"
+            }
+          }
+        },
+        {
+          "id": "SE",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_SE"
+            }
+          }
+        },
+        {
+          "id": "BA",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_BA"
+            }
+          }
+        },
+        {
+          "id": "ARG",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_ARG"
+            }
+          }
+        },
+        {
+          "id": "URY",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_URY"
+            }
+          }
+        },
+        {
+          "id": "VEN",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_VEN"
+            }
+          }
+        },
+        {
+          "id": "PRY",
+          "demand": {
+            "timeseries": {
+              "path": "system/demand_1.csv",
+              "TDR_path": "system/TDR_Results/demand_1.csv",
+              "header": "Demand_MW_PRY"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "CO2",
+      "global_data": {
+        "time_interval": "CO2",
+        "constraints": {
+          "CO2CapConstraint": false,
+          "BalanceConstraint": false
+        }
+      },
+      "instance_data": [
+        {
+          "id": "co2_sink",
+          "rhs_policy": {
+            "CO2CapConstraint": 10000000000.0
+          },
+          "price_unmet_policy": {
+            "CO2CapConstraint": 1000000.0
+          }
+        }
+      ]
+    },
+    {
+      "type": "CO2Captured",
+      "global_data": {
+        "time_interval": "CO2Captured",
+        "constraints": {
+          "BalanceConstraint": false
+        }
+      },
+      "instance_data": [
+        {
+          "id": "co2_captured_sink"
+        }
+      ]
+    },
+    {
+      "type": "Uranium",
+      "global_data": {
+        "time_interval": "Uranium",
+        "constraints": {
+          "BalanceConstraint": false
+        }
+      },
+      "instance_data": [
+        {
+          "id": "uranium_source"
+        }
+      ]
+    },
+    {
+      "type": "NaturalGas",
+      "global_data": {
+        "time_interval": "NaturalGas",
+        "constraints": {
+          "BalanceConstraint": false
+        }
+      },
+      "instance_data": [
+        {
+          "id": "ng_source"
+        }
+      ]
+    },
+    {
+      "type": "Coal",
+      "global_data": {
+        "time_interval": "Coal",
+        "constraints": {
+          "BalanceConstraint": false
+        }
+      },
+      "instance_data": [
+        {
+          "id": "coal_source"
+        }
+      ]
+    },
+    {
+      "type": "LiquidFuels",
+      "global_data": {
+        "time_interval": "LiquidFuels",
+        "constraints": {
+          "BalanceConstraint": false
+        }
+      },
+      "instance_data": [
+        {
+          "id": "oil_source"
+        }
+      ]
+    },
+    {
+      "type": "Biomass",
+      "global_data": {
+        "time_interval": "Biomass",
+        "constraints": {
+          "BalanceConstraint": false
+        }
+      },
+      "instance_data": [
+        {
+          "id": "bio_source"
+        }
+      ]
+    },
+    {
+      "type": "Water",
+      "global_data": {
+        "time_interval": "Water",
+        "constraints": {
+          "BalanceConstraint": true
+        }
+      },
+      "instance_data": [
+        {
+          "id": "hydro_0"
+        },
+        {
+          "id": "hydro_1"
+        },
+        {
+          "id": "hydro_2"
+        },
+        {
+          "id": "hydro_4"
+        },
+        {
+          "id": "hydro_6"
+        },
+        {
+          "id": "hydro_7"
+        },
+        {
+          "id": "hydro_8"
+        },
+        {
+          "id": "hydro_9"
+        },
+        {
+          "id": "hydro_10"
+        },
+        {
+          "id": "hydro_11"
+        },
+        {
+          "id": "hydro_12"
+        },
+        {
+          "id": "hydro_14"
+        },
+        {
+          "id": "hydro_15"
+        },
+        {
+          "id": "hydro_16"
+        },
+        {
+          "id": "hydro_17"
+        },
+        {
+          "id": "hydro_18"
+        },
+        {
+          "id": "hydro_20"
+        },
+        {
+          "id": "hydro_21"
+        },
+        {
+          "id": "hydro_24"
+        },
+        {
+          "id": "hydro_25"
+        },
+        {
+          "id": "hydro_26"
+        },
+        {
+          "id": "hydro_27"
+        },
+        {
+          "id": "hydro_28"
+        },
+        {
+          "id": "hydro_29"
+        },
+        {
+          "id": "hydro_30"
+        },
+        {
+          "id": "hydro_31"
+        },
+        {
+          "id": "hydro_32"
+        },
+        {
+          "id": "hydro_33"
+        },
+        {
+          "id": "hydro_34"
+        },
+        {
+          "id": "hydro_37"
+        },
+        {
+          "id": "hydro_38"
+        },
+        {
+          "id": "hydro_39"
+        },
+        {
+          "id": "hydro_40"
+        },
+        {
+          "id": "hydro_42"
+        },
+        {
+          "id": "hydro_43"
+        },
+        {
+          "id": "hydro_45"
+        },
+        {
+          "id": "hydro_46"
+        },
+        {
+          "id": "hydro_47"
+        },
+        {
+          "id": "hydro_48"
+        },
+        {
+          "id": "hydro_49"
+        },
+        {
+          "id": "hydro_50"
+        },
+        {
+          "id": "hydro_51"
+        },
+        {
+          "id": "hydro_52"
+        },
+        {
+          "id": "hydro_57"
+        },
+        {
+          "id": "hydro_61"
+        },
+        {
+          "id": "hydro_62"
+        },
+        {
+          "id": "hydro_63"
+        },
+        {
+          "id": "hydro_66"
+        },
+        {
+          "id": "hydro_71"
+        },
+        {
+          "id": "hydro_72"
+        },
+        {
+          "id": "hydro_73"
+        },
+        {
+          "id": "hydro_74"
+        },
+        {
+          "id": "hydro_76"
+        },
+        {
+          "id": "hydro_77"
+        },
+        {
+          "id": "hydro_78"
+        },
+        {
+          "id": "hydro_82"
+        },
+        {
+          "id": "hydro_83"
+        },
+        {
+          "id": "hydro_86"
+        },
+        {
+          "id": "hydro_88"
+        },
+        {
+          "id": "hydro_89"
+        },
+        {
+          "id": "hydro_90"
+        },
+        {
+          "id": "hydro_91"
+        },
+        {
+          "id": "hydro_92"
+        },
+        {
+          "id": "hydro_93"
+        },
+        {
+          "id": "hydro_94"
+        },
+        {
+          "id": "hydro_95"
+        },
+        {
+          "id": "hydro_97"
+        },
+        {
+          "id": "hydro_98"
+        },
+        {
+          "id": "hydro_99"
+        },
+        {
+          "id": "hydro_101"
+        },
+        {
+          "id": "hydro_102"
+        },
+        {
+          "id": "hydro_103"
+        },
+        {
+          "id": "hydro_105"
+        },
+        {
+          "id": "hydro_107"
+        },
+        {
+          "id": "hydro_108"
+        },
+        {
+          "id": "hydro_109"
+        },
+        {
+          "id": "hydro_110"
+        },
+        {
+          "id": "hydro_111"
+        },
+        {
+          "id": "hydro_112"
+        },
+        {
+          "id": "hydro_113"
+        },
+        {
+          "id": "hydro_114"
+        },
+        {
+          "id": "hydro_115"
+        },
+        {
+          "id": "hydro_117"
+        },
+        {
+          "id": "hydro_118"
+        },
+        {
+          "id": "hydro_119"
+        },
+        {
+          "id": "hydro_120"
+        },
+        {
+          "id": "hydro_121"
+        },
+        {
+          "id": "hydro_122"
+        },
+        {
+          "id": "hydro_123"
+        },
+        {
+          "id": "hydro_124"
+        },
+        {
+          "id": "hydro_125"
+        },
+        {
+          "id": "hydro_126"
+        },
+        {
+          "id": "hydro_127"
+        },
+        {
+          "id": "hydro_128"
+        },
+        {
+          "id": "hydro_129"
+        },
+        {
+          "id": "hydro_130"
+        },
+        {
+          "id": "hydro_131"
+        },
+        {
+          "id": "hydro_132"
+        },
+        {
+          "id": "hydro_133"
+        },
+        {
+          "id": "hydro_134"
+        },
+        {
+          "id": "hydro_135"
+        },
+        {
+          "id": "hydro_139"
+        },
+        {
+          "id": "hydro_141"
+        },
+        {
+          "id": "hydro_143"
+        },
+        {
+          "id": "hydro_144"
+        },
+        {
+          "id": "hydro_148"
+        },
+        {
+          "id": "hydro_153"
+        },
+        {
+          "id": "hydro_154"
+        },
+        {
+          "id": "hydro_155"
+        },
+        {
+          "id": "hydro_156"
+        },
+        {
+          "id": "hydro_162"
+        },
+        {
+          "id": "hydro_169"
+        },
+        {
+          "id": "hydro_172"
+        },
+        {
+          "id": "hydro_173"
+        },
+        {
+          "id": "hydro_174"
+        },
+        {
+          "id": "hydro_175"
+        },
+        {
+          "id": "hydro_178"
+        },
+        {
+          "id": "hydro_180"
+        },
+        {
+          "id": "hydro_181"
+        },
+        {
+          "id": "hydro_182"
+        },
+        {
+          "id": "hydro_185"
+        },
+        {
+          "id": "hydro_189"
+        },
+        {
+          "id": "hydro_190"
+        },
+        {
+          "id": "hydro_192"
+        },
+        {
+          "id": "hydro_193"
+        },
+        {
+          "id": "hydro_195"
+        },
+        {
+          "id": "hydro_196"
+        },
+        {
+          "id": "hydro_203"
+        },
+        {
+          "id": "hydro_204"
+        },
+        {
+          "id": "hydro_215"
+        },
+        {
+          "id": "hydro_217"
+        },
+        {
+          "id": "hydro_227"
+        },
+        {
+          "id": "hydro_228"
+        },
+        {
+          "id": "hydro_229"
+        },
+        {
+          "id": "hydro_230"
+        },
+        {
+          "id": "hydro_241"
+        },
+        {
+          "id": "hydro_249"
+        },
+        {
+          "id": "hydro_251"
+        },
+        {
+          "id": "hydro_252"
+        },
+        {
+          "id": "hydro_253"
+        },
+        {
+          "id": "hydro_257"
+        },
+        {
+          "id": "hydro_261"
+        },
+        {
+          "id": "hydro_262"
+        },
+        {
+          "id": "hydro_267"
+        },
+        {
+          "id": "hydro_272"
+        },
+        {
+          "id": "hydro_275"
+        },
+        {
+          "id": "hydro_276"
+        },
+        {
+          "id": "hydro_277"
+        },
+        {
+          "id": "hydro_278"
+        },
+        {
+          "id": "hydro_279"
+        },
+        {
+          "id": "hydro_280"
+        },
+        {
+          "id": "hydro_281"
+        },
+        {
+          "id": "hydro_283"
+        },
+        {
+          "id": "hydro_284"
+        },
+        {
+          "id": "hydro_285"
+        },
+        {
+          "id": "hydro_286"
+        },
+        {
+          "id": "hydro_287"
+        },
+        {
+          "id": "hydro_288"
+        },
+        {
+          "id": "hydro_290"
+        },
+        {
+          "id": "hydro_304"
+        },
+        {
+          "id": "hydro_305"
+        },
+        {
+          "id": "hydro_310"
+        },
+        {
+          "id": "hydro_311"
+        },
+        {
+          "id": "hydro_312"
+        },
+        {
+          "id": "hydro_314"
+        },
+        {
+          "id": "hydro_315"
+        }
+      ]
+    },
+    {
+      "type": "Water",
+      "global_data": {
+        "time_interval": "Water",
+        "constraints": {
+          "BalanceConstraint": false
+        }
+      },
+      "instance_data": [
+        {
+          "id": "natural_inflow_source"
+        },
+        {
+          "id": "evap_sink"
+        },
+        {
+          "id": "hydro_ocean_sink"
+        },
+        {
+          "id": "slack_source"
+        },
+        {
+          "id": "slack_sink"
+        }
+      ]
+    },
+    {
+      "type": "Electricity",
+      "global_data": {
+        "time_interval": "Electricity",
+        "constraints": {
+          "BalanceConstraint": false
+        }
+      },
+      "instance_data": [
+        {
+          "id": "hydro_source"
+        },
+        {
+          "id": "hydro_sink"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2022 @@
+{
+  "solar_pv": [
+    {
+      "type": "VRE",
+      "global_data": {
+        "edges": {
+          "elec_edge": {
+            "id": "solar_pv",
+            "commodity": "Electricity",
+            "has_capacity": true,
+            "unidirectional": true,
+            "can_retire": false,
+            "constraints": {
+              "CapacityConstraint": true,
+              "MaxCapacityConstraint": true
+            }
+          }
+        },
+        "transforms": {
+          "id": "solar_pv",
+          "timedata": "Electricity"
+        }
+      },
+      "instance_data": [
+        {
+          "id": "solar_pv_AC",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 1561562.844,
+              "end_vertex": "AC",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_AC"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_AL",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 2537545.9044,
+              "end_vertex": "AL",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_AL"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_AM",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.17604,
+              "capacity_size": 100,
+              "max_capacity": 2906074.7666,
+              "end_vertex": "AM",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_AM"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_AP",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 4.0392,
+              "capacity_size": 100,
+              "max_capacity": 997387.295,
+              "end_vertex": "AP",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_AP"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_BA",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 782.6678,
+              "capacity_size": 100,
+              "max_capacity": 43969682.99,
+              "end_vertex": "BA",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_BA"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_CE",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 218.0,
+              "capacity_size": 100,
+              "max_capacity": 11940469.2406,
+              "end_vertex": "CE",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_CE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_DF",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 275.8423,
+              "end_vertex": "DF",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_DF"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_ES",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 3.07363,
+              "capacity_size": 100,
+              "max_capacity": 3075770.6692,
+              "end_vertex": "ES",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_ES"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_GO",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 24395317.7528,
+              "end_vertex": "GO",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_GO"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_MA",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.2625299999999999,
+              "capacity_size": 100,
+              "max_capacity": 16458072.6656,
+              "end_vertex": "MA",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_MA"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_MG",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 569.98268,
+              "capacity_size": 100,
+              "max_capacity": 41844074.7495,
+              "end_vertex": "MG",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_MG"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_MS",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 2.00138,
+              "capacity_size": 100,
+              "max_capacity": 19619761.2955,
+              "end_vertex": "MS",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_MS"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_MT",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 3.97,
+              "capacity_size": 100,
+              "max_capacity": 39726612.2385,
+              "end_vertex": "MT",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_MT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_PA",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 4.157,
+              "capacity_size": 100,
+              "max_capacity": 21280071.6655,
+              "end_vertex": "PA",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_PA"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_PB",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 136.3836,
+              "capacity_size": 100,
+              "max_capacity": 5627832.0691,
+              "end_vertex": "PB",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_PB"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_PE",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 39.66,
+              "capacity_size": 100,
+              "max_capacity": 9367003.0345,
+              "end_vertex": "PE",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_PE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_PI",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 1033.758,
+              "capacity_size": 100,
+              "max_capacity": 17048979.2564,
+              "end_vertex": "PI",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_PI"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_PR",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.5644199999999999,
+              "capacity_size": 100,
+              "max_capacity": 8282385.7396,
+              "end_vertex": "PR",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_PR"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_RJ",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 4.2899,
+              "capacity_size": 100,
+              "max_capacity": 2057362.3372,
+              "end_vertex": "RJ",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_RJ"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_RN",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 123.41234,
+              "capacity_size": 100,
+              "max_capacity": 4435060.609,
+              "end_vertex": "RN",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_RN"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_RO",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 1.02048,
+              "capacity_size": 100,
+              "max_capacity": 8657234.9226,
+              "end_vertex": "RO",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_RO"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_RR",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 6716752.8268,
+              "end_vertex": "RR",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_RR"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_RS",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 4.31861,
+              "capacity_size": 100,
+              "max_capacity": 13284925.6099,
+              "end_vertex": "RS",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_RS"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_SC",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 7.80553,
+              "capacity_size": 100,
+              "max_capacity": 2927164.9776,
+              "end_vertex": "SC",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_SC"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_SE",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 1938500.659,
+              "end_vertex": "SE",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_SE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_SP",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 354.38607,
+              "capacity_size": 100,
+              "max_capacity": 12416038.5176,
+              "end_vertex": "SP",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_SP"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "solar_pv_TO",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 114070.00089819416,
+              "fixed_om_cost": 15105.740181268882,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 5.0,
+              "capacity_size": 100,
+              "max_capacity": 14762247.2085,
+              "end_vertex": "TO",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "solar_pv_TO"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "onshore_wind": [
+    {
+      "type": "VRE",
+      "global_data": {
+        "edges": {
+          "elec_edge": {
+            "id": "onshore_wind",
+            "commodity": "Electricity",
+            "has_capacity": true,
+            "unidirectional": true,
+            "can_retire": false,
+            "constraints": {
+              "CapacityConstraint": true,
+              "MaxCapacityConstraint": true
+            }
+          }
+        },
+        "transforms": {
+          "timedata": "Electricity"
+        }
+      },
+      "instance_data": [
+        {
+          "id": "on_wind_AC",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 31793.5572,
+              "end_vertex": "AC",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_AC"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_AL",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 16161.0096,
+              "end_vertex": "AL",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_AL"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_AM",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 233461.2325,
+              "end_vertex": "AM",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_AM"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_AP",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 12213.0916,
+              "end_vertex": "AP",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_AP"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_BA",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 4974.34564,
+              "capacity_size": 100,
+              "max_capacity": 285636.179,
+              "end_vertex": "BA",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_BA"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_CE",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 2394.64,
+              "capacity_size": 100,
+              "max_capacity": 72982.8912,
+              "end_vertex": "CE",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_CE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_DF",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 0.0,
+              "end_vertex": "DF",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_DF"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_ES",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 23402.5272,
+              "end_vertex": "ES",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_ES"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_GO",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 181230.9862,
+              "end_vertex": "GO",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_GO"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_MA",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 426.0225,
+              "capacity_size": 100,
+              "max_capacity": 116413.1418,
+              "end_vertex": "MA",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_MA"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_MG",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.156,
+              "capacity_size": 100,
+              "max_capacity": 306360.4714,
+              "end_vertex": "MG",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_MG"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_MS",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 155795.9506,
+              "end_vertex": "MS",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_MS"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_MT",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 359775.7155,
+              "end_vertex": "MT",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_MT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_PA",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 263084.2901,
+              "end_vertex": "PA",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_PA"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_PB",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 157.2,
+              "capacity_size": 100,
+              "max_capacity": 33726.5604,
+              "end_vertex": "PB",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_PB"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_PE",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 772.765,
+              "capacity_size": 100,
+              "max_capacity": 56663.3289,
+              "end_vertex": "PE",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_PE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_PI",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 2382.25,
+              "capacity_size": 100,
+              "max_capacity": 105898.918,
+              "end_vertex": "PI",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_PI"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_PR",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 2.5,
+              "capacity_size": 100,
+              "max_capacity": 93208.6651,
+              "end_vertex": "PR",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_PR"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_RJ",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 28.05,
+              "capacity_size": 100,
+              "max_capacity": 17349.2537,
+              "end_vertex": "RJ",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_RJ"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_RN",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 4840.981,
+              "capacity_size": 100,
+              "max_capacity": 27809.2153,
+              "end_vertex": "RN",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_RN"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_RO",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 74635.6655,
+              "end_vertex": "RO",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_RO"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_RR",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 69354.2808,
+              "end_vertex": "RR",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_RR"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_RS",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 1835.89198,
+              "capacity_size": 100,
+              "max_capacity": 143959.0914,
+              "end_vertex": "RS",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_RS"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_SC",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 250.5995,
+              "capacity_size": 100,
+              "max_capacity": 36796.5947,
+              "end_vertex": "SC",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_SC"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_SE",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 34.5,
+              "capacity_size": 100,
+              "max_capacity": 12690.0611,
+              "end_vertex": "SE",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_SE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_SP",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.00224,
+              "capacity_size": 100,
+              "max_capacity": 114305.0695,
+              "end_vertex": "SP",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_SP"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "on_wind_TO",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 142587.5011227427,
+              "fixed_om_cost": 30211.480362537764,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 20.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 100,
+              "max_capacity": 96145.6569,
+              "end_vertex": "TO",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "on_wind_TO"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "offshore_wind": [
+    {
+      "type": "VRE",
+      "global_data": {
+        "edges": {
+          "elec_edge": {
+            "id": "offshore_wind",
+            "commodity": "Electricity",
+            "has_capacity": true,
+            "unidirectional": true,
+            "can_retire": false,
+            "constraints": {
+              "CapacityConstraint": true,
+              "MaxCapacityConstraint": true
+            }
+          }
+        },
+        "transforms": {
+          "timedata": "Electricity"
+        }
+      },
+      "instance_data": [
+        {
+          "id": "off_wind_AC",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 0.0,
+              "end_vertex": "AC",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_AC"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_AL",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 9454.9429,
+              "end_vertex": "AL",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_AL"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_AM",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 0.0,
+              "end_vertex": "AM",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_AM"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_AP",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 131293.0561,
+              "end_vertex": "AP",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_AP"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_BA",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 92179.8293,
+              "end_vertex": "BA",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_BA"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_CE",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 109487.4235,
+              "end_vertex": "CE",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_CE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_DF",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 0.0,
+              "end_vertex": "DF",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_DF"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_ES",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 61633.4179,
+              "end_vertex": "ES",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_ES"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_GO",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 0.0,
+              "end_vertex": "GO",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_GO"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_MA",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 118188.9129,
+              "end_vertex": "MA",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_MA"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_MG",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 0.0,
+              "end_vertex": "MG",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_MG"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_MS",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 0.0,
+              "end_vertex": "MS",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_MS"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_MT",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 0.0,
+              "end_vertex": "MT",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_MT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_PA",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 229091.5375,
+              "end_vertex": "PA",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_PA"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_PB",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 11386.5914,
+              "end_vertex": "PB",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_PB"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_PE",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 10242.2263,
+              "end_vertex": "PE",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_PE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_PI",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 11172.913,
+              "end_vertex": "PI",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_PI"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_PR",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 18668.1513,
+              "end_vertex": "PR",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_PR"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_RJ",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 35292.7192,
+              "end_vertex": "RJ",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_RJ"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_RN",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 36387.8671,
+              "end_vertex": "RN",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_RN"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_RO",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 0.0,
+              "end_vertex": "RO",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_RO"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_RR",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 0.0,
+              "end_vertex": "RR",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_RR"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_RS",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 114073.5736,
+              "end_vertex": "RS",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_RS"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_SC",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 25926.5885,
+              "end_vertex": "SC",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_SC"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_SE",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 6891.1897,
+              "end_vertex": "SE",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_SE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_SP",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 29249.8304,
+              "end_vertex": "SP",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_SP"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "off_wind_TO",
+          "edges": {
+            "elec_edge": {
+              "can_expand": true,
+              "investment_cost": 300336.8102723296,
+              "fixed_om_cost": 100000.0,
+              "variable_om_cost": 0.0,
+              "lifetime": 25.0,
+              "capital_recovery_period": 25.0,
+              "existing_capacity": 0.0,
+              "capacity_size": 300,
+              "max_capacity": 0.0,
+              "end_vertex": "TO",
+              "availability": {
+                "timeseries": {
+                  "path": "system/availability_2.csv",
+                  "TDR_path": "system/TDR_Results/availability_2.csv",
+                  "header": "off_wind_TO"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
