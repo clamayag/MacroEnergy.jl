@@ -34,35 +34,52 @@ Here is a graphical representation of the Hydro Streamflow asset:
 flowchart LR
   subgraph HydroStreamflow
     direction LR
-    NI[Natural Inflow] --> S[Storage]
-    IF[Inflow] --> S
+    NI((Natural Inflow)) --> S[Storage]
+    IF((Inflow)) --> S
     S --> D[Discharge]
     S --> SP[Spill]
     S --> DV[Diversion]
     S --> EV[Evaporation]
-    D --> T[Transformation]
-    T --> G[Electricity]
+    D --> T((Transformation))
+    T --> G((Electricity))
     T --> TR[Tailrace]
   end
 
-  PHS[PHS] --> S
+  PHS((PHS)) --> S
   S --> PHS
-  L[Load] --> T
-  SL[Slack] --> S
-  RV[Reverse] --> T
+  L((Load)) --> T
+  SL((Slack)) --> S
+  RV((Reverse)) --> T
 
-  style NI fill:#FFD700,stroke:black,color:black
-  style IF fill:#FFD700,stroke:black,color:black
+  style NI fill:#B3D4FC,stroke:black,color:black
+  style IF fill:#B3D4FC,stroke:black,color:black
   style S fill:#B3D4FC,stroke:black,color:black
-  style D fill:#FFD700,stroke:black,color:black
-  style SP fill:#FFB6B9,stroke:black,color:black
-  style T fill:#C1E1C1,stroke:black,color:black
-  style G fill:#FFD700,stroke:black,color:black
+  style D fill:#B3D4FC,stroke:black,color:black
+  style SP fill:#B3D4FC,stroke:black,color:black
+  style DV fill:#B3D4FC,stroke:black,color:black
+  style EV fill:#B3D4FC,stroke:black,color:black
+  style PHS fill:#B3D4FC,stroke:black,color:black
   style TR fill:#B3D4FC,stroke:black,color:black
-  style PHS fill:#E6E6FA,stroke:black,color:black
-  style L fill:#FFCC99,stroke:black,color:black
-  style RV fill:#FFCC99,stroke:black,color:black
-  style SL fill:#D3D3D3,stroke:black,color:black
+  style T r:48px,fill:#FFD700,stroke:black,color:black,stroke-dasharray: 3,5;
+  style G r:48px,fill:#FFD700,stroke:black,color:black,stroke-dasharray: 3,5;
+  style L r:48px,fill:#FFD700,stroke:black,color:black,stroke-dasharray: 3,5;
+  style SL fill:#B3D4FC,stroke:black,color:black
+  style RV fill:#B3D4FC,stroke:black,color:black
+
+  linkStyle 0 stroke:#B3D4FC, stroke-width: 2px;
+  linkStyle 1 stroke:#B3D4FC, stroke-width: 2px;
+  linkStyle 2 stroke:#B3D4FC, stroke-width: 2px;
+  linkStyle 3 stroke:#B3D4FC, stroke-width: 2px;
+  linkStyle 4 stroke:#B3D4FC, stroke-width: 2px;
+  linkStyle 5 stroke:#B3D4FC, stroke-width: 2px;
+  linkStyle 6 stroke:#B3D4FC, stroke-width: 2px;
+  linkStyle 7 stroke:#FFD700, stroke-width: 2px;
+  linkStyle 8 stroke:#B3D4FC, stroke-width: 2px;
+  linkStyle 9 stroke:#B3D4FC, stroke-width: 2px;
+  linkStyle 10 stroke:#B3D4FC, stroke-width: 2px;
+  linkStyle 11 stroke:#FFD700, stroke-width: 2px;
+  linkStyle 12 stroke:#B3D4FC, stroke-width: 2px;
+  linkStyle 13 stroke:#B3D4FC, stroke-width: 2px;
 ```
 
 > **Diagram note:** If Mermaid is not rendered in your preview, the asset structure is:
